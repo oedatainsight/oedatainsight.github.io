@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.studyData = data;
 
       // Populate the enzyme and herb grids
-      populateGrid('enzymeGrid', ["CYP3A4/5", "CYP1A2", "CYP2D6", "CYP2E1"], 'enzyme');
+      populateGrid('enzymeGrid', ["CYP3A4", "CYP1A2", "CYP2D6", "CYP2E1"], 'enzyme');
       populateGrid('herbGrid', ["Goldenseal", "Black Cohosh", "Valerian", "Kava"], 'herb');
     });
 

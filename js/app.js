@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const interactionDisplay = document.getElementById('interactionDisplay');
-  window.selected = {};
+  window.selected = { enzyme: null, herb: null };
 
   // Fetch the data from your study
   // Fetch the data from your study

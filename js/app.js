@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const interactionDisplay = document.getElementById('interactionDisplay');
   window.selected = { enzyme: null, herb: null };
+  window.state = 'enzyme'; // Initialize the state
 
-  // Fetch the data from your study
   // Fetch the data from your study
   fetch('/data/interactions.json')
     .then(response => response.json())

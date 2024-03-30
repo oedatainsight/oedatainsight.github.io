@@ -37,7 +37,8 @@ body {
 }
 /* Add a class for the animation */
 .slide-right {
-  animation: slide-right 1s forwards;
+  transition: transform 1s;
+  transform: translateX(100%);
 }
 
 @keyframes slide-right {

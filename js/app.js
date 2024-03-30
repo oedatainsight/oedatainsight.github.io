@@ -29,7 +29,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize the state
   window.state = 'enzyme';
+  // Add event listeners to the select elements
+  enzymeSelect.addEventListener('change', function() {
+    window.selected.enzyme = this.value;
+    // Add the faded class to non-selected options
+    for (let option of enzymeSelect.options) {
+      if (option.value !== this.value) {
+        option.classList.add('faded');
+      } else {
+        option.classList.remove('faded');
+      }
+    }
+    if (window.selected.herb) {
+      displayInteraction();
+    }
+  });
 
+  herbSelect.addEventListener('change', function() {
+    window.selected.herb = this.value;
+    // Add the faded class to non-selected options
+    for (let option of herbSelect.options) {
+      if (option.value !== this.value) {
+        option.classList.add('faded');
+      } else {
+        option.classList.remove('faded');
+      }
+    }
+    if (window.selected.enzyme) {
+      displayInteraction();
+    }
+  });
+
+  // Function to display the interaction data
+  function displayInteraction() {
+    const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
+    interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
+    
+    // Reset the state and selected items
+    window.state = 'enzyme';
+    window.selected = {};
+  }
   function selectItem(type, item) {
     // Check if the user is selecting the correct type
     if (type !== window.state) {

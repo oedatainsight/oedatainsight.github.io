@@ -30,4 +30,7 @@ body {
 .icon {
   width: 200px;  /* adjust as needed */
   height: 200px; /* adjust as needed */
+}/* Add a class for faded options */
+.faded {
+  opacity: 0.5;
 }

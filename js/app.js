@@ -57,6 +57,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
         
+        // Add the slide-right class to the selected items
+        document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
+        document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');
+
+        // Remove non-selected items
+        for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
+          image.remove();
+        }
+
         // Reset the state and selected items
         window.state = 'enzyme';
         window.selected = {};

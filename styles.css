@@ -31,6 +31,21 @@ body {
   width: 200px;  /* adjust as needed */
   height: 200px; /* adjust as needed */
 }/* Add a class for faded options */
+
 .faded {
   opacity: 0.5;
+}
+/* Add a class for the animation */
+.slide-right {
+  animation: slide-right 1s forwards;
+}
+
+@keyframes slide-right {
+  100% { transform: translateX(100%); }
+}
+
+/* Add a class for the selected items */
+.selected {
+  position: absolute;
+  left: 0;
 }

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Fetch the data from your study
   // Fetch the data from your study
-  fetch('interactions.json')
+  fetch('/data/interactions.json')
     .then(response => response.json())
     .then(data => {
       // Store the data for later use

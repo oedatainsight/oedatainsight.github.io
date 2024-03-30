@@ -33,8 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {
-      const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
-      interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
+      if (window.studyData && window.studyData[window.selected.enzyme]) {
+        const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
+        interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
+      } else {
+        console.log('Data not available');
+      }
     }
   }
 });

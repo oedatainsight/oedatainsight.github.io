@@ -29,6 +29,5 @@ body {
 }
 .icon {
   width: 100px;  /* adjust as needed */
-  height: 100px; /* adjust as needed */
-  object-fit: cover; /* this will ensure that the images maintain their aspect ratio */
+  height: auto; /* this will maintain the aspect ratio */
 }

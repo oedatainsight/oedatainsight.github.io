@@ -28,6 +28,6 @@ body {
   transition: opacity 1s ease-in-out;
 }
 .icon {
-  width: 100px;  /* adjust as needed */
-  height: auto; /* this will maintain the aspect ratio */
+  width: 50px;  /* adjust as needed */
+  height: 50px; /* adjust as needed */
 }

@@ -27,15 +27,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Initialize the state
+  window.state = 'enzyme';
+
   function selectItem(type, item) {
+    // Check if the user is selecting the correct type
+    if (type !== window.state) {
+      alert(`Please select an ${window.state} first.`);
+      return;
+    }
+
     // Store the selected item
     window.selected[type] = item;
+
+    // Update the state
+    window.state = window.state === 'enzyme' ? 'herb' : 'enzyme';
 
     // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
+        
+        // Reset the state and selected items
+        window.state = 'enzyme';
+        window.selected = {};
       } else {
         console.log('Data not available');
       }

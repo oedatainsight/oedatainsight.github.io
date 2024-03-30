@@ -28,6 +28,6 @@ body {
   transition: opacity 1s ease-in-out;
 }
 .icon {
-  width: 50px;  /* adjust as needed */
-  height: 50px; /* adjust as needed */
+  width: 200px;  /* adjust as needed */
+  height: 200px; /* adjust as needed */
 }

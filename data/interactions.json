@@ -1,32 +1,26 @@
 {
-  "studyDetails": {
-    "objectives": "To determine whether long-term supplementation of goldenseal, black cohosh, kava kava, or valerian extracts affected CYP1A2, CYP2D6, CYP2E1, or CYP3A4/5 activity.",
-    "methods": "Twelve healthy volunteers were assigned to receive goldenseal, black cohosh, kava kava, or valerian for 28 days with a washout period between each phase. Probe drug cocktails were administered to measure CYP activity changes.",
-    "conclusions": "Goldenseal strongly inhibited CYP2D6 and CYP3A4/5 activity, kava inhibited CYP2E1, black cohosh weakly inhibited CYP2D6, and valerian showed no significant change."
+  "CYP2D6": {
+    "Goldenseal": "Significant inhibition (approx. 40%)",
+    "Black Cohosh": "Statistically significant inhibition (approx. 7%), likely not clinically relevant",
+    "Kava": "No significant change",
+    "Valerian": "No significant change"
   },
-    "CYP2D6": {
-      "Goldenseal": "Significant inhibition (approx. 40%)",
-      "Black Cohosh": "Statistically significant inhibition (approx. 7%), likely not clinically relevant",
-      "Kava": "No significant change",
-      "Valerian": "No significant change"
-    },
-    "CYP3A4/5": {
-      "Goldenseal": "Significant inhibition (approx. 40%)",
-      "Black Cohosh": "No significant change",
-      "Kava": "No significant change",
-      "Valerian": "No significant change"
-    },
-    "CYP2E1": {
-      "Goldenseal": "No significant change",
-      "Black Cohosh": "No significant change",
-      "Kava": "Significant reductions (approx. 40%)",
-      "Valerian": "No significant change"
-    },
-    "CYP1A2": {
-      "Goldenseal": "No data provided for CYP1A2 interactions in the summary",
-      "Black Cohosh": "No data provided for CYP1A2 interactions in the summary",
-      "Kava": "No data provided for CYP1A2 interactions in the summary",
-      "Valerian": "No data provided for CYP1A2 interactions in the summary"
-    }
+  "CYP3A4/5": {
+    "Goldenseal": "Significant inhibition (approx. 40%)",
+    "Black Cohosh": "No significant change",
+    "Kava": "No significant change",
+    "Valerian": "No significant change"
+  },
+  "CYP2E1": {
+    "Goldenseal": "No significant change",
+    "Black Cohosh": "No significant change",
+    "Kava": "Significant reductions (approx. 40%)",
+    "Valerian": "No significant change"
+  },
+  "CYP1A2": {
+    "Goldenseal": "No data provided for CYP1A2 interactions in the summary",
+    "Black Cohosh": "No data provided for CYP1A2 interactions in the summary",
+    "Kava": "No data provided for CYP1A2 interactions in the summary",
+    "Valerian": "No data provided for CYP1A2 interactions in the summary"
   }
-  
+}

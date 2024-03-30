@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById(gridId);
     items.forEach(item => {
       let img = document.createElement('img');
-      img.src = `images/${type}-icons/${item.toLowerCase()}.png`;
-      img.alt = item;
+      img.classList.add('icon');
+      img.src = `images/${type}-icons/${encodeURIComponent(item.toLowerCase())}.png`;      img.alt = item;
       img.classList.add(`${type}-image`);
       img.addEventListener('click', () => selectItem(type, item));
       grid.appendChild(img);

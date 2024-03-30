@@ -44,9 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.state = window.state === 'enzyme' ? 'herb' : 'enzyme';
 
     // If both an enzyme and a herb are selected, display the interaction data
+    // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {
+      console.log('Enzyme:', window.selected.enzyme);
+      console.log('Herb:', window.selected.herb);
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
+        console.log('Interaction:', interaction);
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
         
         // Reset the state and selected items

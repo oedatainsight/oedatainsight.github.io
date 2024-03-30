@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       img.addEventListener('click', function() {
         selectItem(type, item);
         // Add the faded class to non-selected images
-        for (let image of grid.children) {
+        for (let image of container.children) {
           if (image.alt !== item) {
             image.classList.add('faded');
           } else {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       });
-      grid.appendChild(img);
+      container.appendChild(img);
     });
   }
 

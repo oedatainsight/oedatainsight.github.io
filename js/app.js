@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function populateGrid(gridId, items, type) {
     const grid = document.getElementById(gridId);
+    let container = document.createElement('div'); // Create a container for the images
+    container.style.display = 'inline-block'; // Make the container display its children inline
+    grid.appendChild(container); // Add the container to the grid
+
     items.forEach(item => {
       let img = document.createElement('img');
       img.classList.add('icon');
@@ -34,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       });
-      container.appendChild(img);
+      container.appendChild(img); // Add the image to the container instead of the grid
     });
   }
 
@@ -56,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
-        
+        interactionDisplay.classList.add('fade-in'); // Add the fade-in class
+
         // Add the slide-right class to the selected items
         document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
         document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');

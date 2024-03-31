@@ -71,12 +71,27 @@ document.addEventListener('DOMContentLoaded', function() {
           image.remove();
         }
 
-        // Reset the state and selected items
-        window.state = 'enzyme';
-        window.selected = {};
+        // Show the "Go Back" button
+        document.getElementById('goBack').style.display = 'block';
       } else {
         console.log('Data not available');
       }
     }
-  }
-});
+
+    // Add a click event listener to the "Go Back" button
+    document.getElementById('goBack').addEventListener('click', function() {
+      // Reset the state and selected items
+      window.state = 'enzyme';
+      window.selected = {};
+
+      // Clear the interaction data
+      interactionDisplay.textContent = '';
+
+      // Hide the "Go Back" button
+      this.style.display = 'none';
+
+      // Reload the page to reset the selection screen
+      location.reload();
+    });
+  } 
+}); 

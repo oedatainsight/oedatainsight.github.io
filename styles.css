@@ -39,9 +39,12 @@ body {
   opacity: 0.2;
 }
 /* Add a class for the animation */
-.slide-right {
-  transition: transform 1s;
-  transform: translateX(100%);
+.selected {
+  animation: slide-right 3s forwards;
+}
+
+@keyframes slide-right {
+  to { transform: translateX(300px); }
 }
 
 @keyframes slide-right {
@@ -53,8 +56,4 @@ body {
 }
 .fade-in {
   animation: fade-in 1s ease-in-out;
-}
-.selected {
-  position: absolute;
-  left: 0;
 }

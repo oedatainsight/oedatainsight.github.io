@@ -40,7 +40,7 @@ body {
 }
 /* Add a class for the animation */
 .selected {
-  animation: slide-right 3s forwards;
+  animation: slide-right 2s forwards;
 }
 
 @keyframes slide-right {
@@ -55,5 +55,5 @@ body {
   to { opacity: 1; }
 }
 .fade-in {
-  animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s forwards;
 }

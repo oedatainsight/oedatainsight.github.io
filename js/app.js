@@ -69,7 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the faded class to non-selected images
         for (let sibling of itemContainer.parentNode.children) {
           if (sibling !== itemContainer) {
+            if (window.selected[type]) {
+              alert(`You have already selected a ${type}. You can't select more than one.`);
+              return;
+            } else {
+              selectItem(type, item);
             sibling.classList.add('faded');
+            }
           } else {
             sibling.classList.remove('faded');
           }

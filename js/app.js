@@ -104,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
     // Create a new chart
     const ctx = document.getElementById('interactionChart').getContext('2d');
-    ctx.canvas.height = 200;
+    ctx.canvas.height = 200; // Adjust as needed
+    ctx.canvas.width = 400; // Adjust as needed
     const chart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -112,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
         datasets: [{
           label:metabolizingAgent,
           data: [preSupplementationData, postSupplementationData],
-          backgroundColor: ['rgba(255, 99, 132, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 0.2)'],
+          backgroundColor: ['rgba(128, 128, 128, 0.2)', 'rgba(128, 128, 128, 0.2)'], // Change to gray
+          borderColor: ['rgba(128, 128, 128, 1)', 'rgba(128, 128, 128, 1)'], // Change to gray
           borderWidth: 1,
+    
   
           // Add error bars
           errorBars: {

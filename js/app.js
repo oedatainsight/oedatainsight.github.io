@@ -68,23 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!window.selected[type]) {
         selectItem(type, item);
         // Add the faded class to non-selected images
+        itemContainer.appendChild(img); // Add the image to the item container
+        itemContainer.appendChild(name);
 
         for (let sibling of itemContainer.parentNode.children) {
           if (sibling !== itemContainer) {
-      
-            sibling.classList.add('faded');
-            sibling.querySelector('p').classList.add('hidden');
-            sibling.querySelector('p').classList.add('slide-right');
-
-             // Add slide animation
-
-    
-          } else {
-            sibling.classList.remove('faded');
-            sibling.querySelector('p').classList.remove('hidden'); // Show the name
-            sibling.querySelector('p').classList.add('slide-right'); //
-            //Add slide animation
-
+        sibling.classList.add('faded');
+        sibling.classList.add('slide-right'); // Add slide animation to container
+      } else {
+        sibling.classList.remove('faded');
+        sibling.classList.add('slide-right'); 
 
           }
         }
@@ -176,6 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
+        }
+
+    // Remove non-selected words
+        for (let word of document.querySelectorAll('.enzyme-name:not(.selected), .herb-name:not(.selected)')) {
+          word.remove();
         }
         updateChart(interaction);
         const footnoteDisplay = document.getElementById('footnoteDisplay');

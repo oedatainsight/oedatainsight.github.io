@@ -58,7 +58,7 @@ body {
   animation: fade-in 1s forwards;
 }
 #interactionChart {
-  width: 200px;
+  width: 100px;
   max-width: 30%; /* Ensure the chart doesn't overflow its container */
-  height: 200px;
+  height: 100px;
 }

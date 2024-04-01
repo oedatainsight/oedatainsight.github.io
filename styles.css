@@ -88,7 +88,7 @@ body {
 } 
 #methodsContainer {
   background-color: #e9e9e9;
-  max-width: 30%; /* Change the background color */
+  max-width: 10%; /* Change the background color */
 }
 #objectivesContainer {
   background-color: #e9e9e9; 
@@ -115,6 +115,7 @@ body {
   justify-content: space-around; /* Distributes the buttons evenly */
   padding: 10px;
   background-color: #3b4fcc; /* Change as needed */
+   align-items: center; /* Adjust as needed */
 }
 
 .toolbar button {

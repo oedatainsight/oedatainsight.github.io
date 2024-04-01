@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
       options: {
         title: {
           display: true,
-          text: footnote,
+    
           fontSize: 20
         },
         scales: {
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
     }
 
-    // Add a click event listener to the "Go Back" button
+    document.getElementById('goBack').style.display = 'block';
     document.getElementById('goBack').addEventListener('click', function() {
       // Reset the state and selected items
       window.state = 'enzyme';

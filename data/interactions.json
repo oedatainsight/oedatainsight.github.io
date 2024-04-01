@@ -1,177 +1,206 @@
-
 {
   "CYP2D6": {
-      "Goldenseal": {
-        "description": "Significant inhibition (approx. 40%)",
-        "preSupplementation": {
-          "mean": 0.64,
-          "CI": "0.56 to 0.72"
-        },
-        "postSupplementation": {
-          "mean": 0.41,
-          "CI": "0.30 to 0.52"
-        }
+    "Goldenseal": {
+      "description": "Significant inhibition (approx. 40%)",
+      "preSupplementation": {
+        "mean": 0.64,
+        "lowerCI": 0.56,
+        "upperCI": 0.72
       },
-      "Kava kava": {
-        "preSupplementation": {
-          "mean": 0.62,
-          "CI": "0.55 to 0.70"
-        },
-        "postSupplementation": {
-          "mean": 0.63,
-          "CI": "0.55 to 0.71"
-        }
-      },
-      "Black cohosh": {
-        "description": "Statistically significant inhibition (approx. 7%), likely not clinically relevant",
-        "preSupplementation": {
-          "mean": 0.64,
-          "CI": "0.57 to 0.71"
-        },
-        "postSupplementation": {
-          "mean": 0.59,
-          "CI": "0.52 to 0.67"
-        }
-      },
-      "Valerian": {
-        "preSupplementation": {
-          "mean": 0.64,
-          "CI": "0.58 to 0.71"
-        },
-        "postSupplementation": {
-          "mean": 0.63,
-          "CI": "0.56 to 0.71"
-        }
+      "postSupplementation": {
+        "mean": 0.41,
+        "lowerCI": 0.30,
+        "upperCI": 0.52
       }
     },
-    "CYP3A4": {
-      "Goldenseal": {
-        "description": "Significant inhibition (approx. 40%)",
-        "preSupplementation": {
-          "mean": 3.93,
-          "CI": "3.29 to 4.57"
-        },
-        "postSupplementation": {
-          "mean": 2.43,
-          "CI": "1.76 to 3.09"
-        }
+    "Kava kava": {
+      "preSupplementation": {
+        "mean": 0.62,
+        "lowerCI": 0.55,
+        "upperCI": 0.70
       },
-      "Kava kava": {
-        "preSupplementation": {
-          "mean": 4.03,
-          "CI": "3.17 to 4.90"
-        },
-        "postSupplementation": {
-          "mean": 3.99,
-          "CI": "3.33 to 4.64"
-        }
-      },
-      "Black cohosh": {
-        "preSupplementation": {
-          "mean": 3.89,
-          "CI": "3.05 to 4.73"
-        },
-        "postSupplementation": {
-          "mean": 3.35,
-          "CI": "2.87 to 3.84"
-        }
-      },
-      "Valerian": {
-        "preSupplementation": {
-          "mean": 3.68,
-          "CI": "3.30 to 4.06"
-        },
-        "postSupplementation": {
-          "mean": 3.68,
-          "CI": "2.95 to 4.40"
-        }
+      "postSupplementation": {
+        "mean": 0.63,
+        "lowerCI": 0.55,
+        "upperCI": 0.71
       }
     },
-      "CYP2E1": {
-        "Goldenseal": {
-          "preSupplementation": {
-            "mean": 0.47,
-            "CI": "0.39 to 0.56"
-          },
-          "postSupplementation": {
-            "mean": 0.45,
-            "CI": "0.34 to 0.57"
-          }
-        },
-        "Kava kava": {
-          "description": "Significant reductions (approx. 40%)",
-          "preSupplementation": {
-            "mean": 0.48,
-            "CI": "0.36 to 0.59"
-          },
-          "postSupplementation": {
-            "mean": 0.28,
-            "CI": "0.21 to 0.36"
-          }
-        },
-        "Black cohosh": {
-          "preSupplementation": {
-            "mean": 0.45,
-            "CI": "0.35 to 0.54"
-          },
-          "postSupplementation": {
-            "mean": 0.43,
-            "CI": "0.34 to 0.53"
-          }
-        },
-        "Valerian": {
-          "preSupplementation": {
-            "mean": 0.46,
-            "CI": "0.37 to 0.55"
-          },
-          "postSupplementation": {
-            "mean": 0.46,
-            "CI": "0.36 to 0.57"
-          }
-        }
+    "Black cohosh": {
+      "description": "Statistically significant inhibition (approx. 7%), likely not clinically relevant",
+      "preSupplementation": {
+        "mean": 0.64,
+        "lowerCI": 0.57,
+        "upperCI": 0.71
       },
-
-    "CYP1A2": {
-      "Goldenseal": {
-        "preSupplementation": {
-          "mean": 0.47,
-          "CI": "0.37 to 0.56"
-        },
-        "postSupplementation": {
-          "mean": 0.44,
-          "CI": "0.32 to 0.55"
-        }
+      "postSupplementation": {
+        "mean": 0.59,
+        "lowerCI": 0.52,
+        "upperCI": 0.67
+      }
+    },
+    "Valerian": {
+      "preSupplementation": {
+        "mean": 0.64,
+        "lowerCI": 0.58,
+        "upperCI": 0.71
       },
-      "Kava kava": {
-        "preSupplementation": {
-          "mean": 0.48,
-          "CI": "0.36 to 0.61"
-        },
-        "postSupplementation": {
-          "mean": 0.48,
-          "CI": "0.36 to 0.61"
-        }
-      },
-      "Black cohosh": {
-        "preSupplementation": {
-          "mean": 0.47,
-          "CI": "0.39 to 0.55"
-        },
-        "postSupplementation": {
-          "mean": 0.43,
-          "CI": "0.31 to 0.55"
-        }
-      },
-      "Valerian": {
-        "preSupplementation": {
-          "mean": 0.50,
-          "CI": "0.38 to 0.62"
-        },
-        "postSupplementation": {
-          "mean": 0.47,
-          "CI": "0.34 to 0.59"
-        }
+      "postSupplementation": {
+        "mean": 0.63,
+        "lowerCI": 0.56,
+        "upperCI": 0.71
       }
     }
-  
+  },
+  "CYP3A4": {
+    "Goldenseal": {
+      "description": "Significant inhibition (approx. 40%)",
+      "preSupplementation": {
+        "mean": 3.93,
+        "lowerCI": 3.29,
+        "upperCI": 4.57
+      },
+      "postSupplementation": {
+        "mean": 2.43,
+        "lowerCI": 1.76,
+        "upperCI": 3.09
+      }
+    },
+    "Kava kava": {
+      "preSupplementation": {
+        "mean": 4.03,
+        "lowerCI": 3.17,
+        "upperCI": 4.90
+      },
+      "postSupplementation": {
+        "mean": 3.99,
+        "lowerCI": 3.33,
+        "upperCI": 4.64
+      }
+    },
+    "Black cohosh": {
+      "preSupplementation": {
+        "mean": 3.89,
+        "lowerCI": 3.05,
+        "upperCI": 4.73
+      },
+      "postSupplementation": {
+        "mean": 3.35,
+        "lowerCI": 2.87,
+        "upperCI": 3.84
+      }
+    },
+    "Valerian": {
+      "preSupplementation": {
+        "mean": 3.68,
+        "lowerCI": 3.30,
+        "upperCI": 4.06
+      },
+      "postSupplementation": {
+        "mean": 3.68,
+        "lowerCI": 2.95,
+        "upperCI": 4.40
+      }
+    }
+  },
+  "CYP2E1": {
+    "Goldenseal": {
+      "preSupplementation": {
+        "mean": 0.47,
+        "lowerCI": 0.39,
+        "upperCI": 0.56
+      },
+      "postSupplementation": {
+        "mean": 0.45,
+        "lowerCI": 0.34,
+        "upperCI": 0.57
+      }
+    },
+    "Kava kava": {
+      "description": "Significant reductions (approx. 40%)",
+      "preSupplementation": {
+        "mean": 0.48,
+        "lowerCI": 0.36,
+        "upperCI": 0.59
+      },
+      "postSupplementation": {
+        "mean": 0.28,
+        "lowerCI": 0.21,
+        "upperCI": 0.36
+      }
+    },
+    "Black cohosh": {
+      "preSupplementation": {
+        "mean": 0.45,
+        "lowerCI": 0.35,
+        "upperCI": 0.54
+      },
+      "postSupplementation": {
+        "mean": 0.43,
+        "lowerCI": 0.34,
+        "upperCI": 0.53
+      }
+    },
+    "Valerian": {
+      "preSupplementation": {
+        "mean": 0.46,
+        "lowerCI": 0.37,
+        "upperCI": 0.55
+      },
+      "postSupplementation": {
+        "mean": 0.46,
+        "lowerCI": 0.36,
+        "upperCI": 0.57
+      }
+    }
+  },
+  "CYP1A2": {
+    "Goldenseal": {
+      "preSupplementation": {
+        "mean": 0.47,
+        "lowerCI": 0.37,
+        "upperCI": 0.56
+      },
+      "postSupplementation": {
+        "mean": 0.44,
+        "lowerCI": 0.32,
+        "upperCI": 0.55
+      }
+    },
+    "Kava kava": {
+      "preSupplementation": {
+        "mean": 0.48,
+        "lowerCI": 0.36,
+        "upperCI": 0.61
+      },
+      "postSupplementation": {
+        "mean": 0.48,
+        "lowerCI": 0.36,
+        "upperCI": 0.61
+      }
+    },
+    "Black cohosh": {
+      "preSupplementation": {
+        "mean": 0.47,
+        "lowerCI": 0.39,
+        "upperCI": 0.55
+      },
+      "postSupplementation": {
+        "mean": 0.43,
+        "lowerCI": 0.31,
+        "upperCI": 0.55
+      }
+    },
+    "Valerian": {
+      "preSupplementation": {
+        "mean": 0.50,
+        "lowerCI": 0.38,
+        "upperCI": 0.62
+      },
+      "postSupplementation": {
+        "mean": 0.47,
+        "lowerCI": 0.34,
+        "upperCI": 0.59
+      }
+    }
+  }
 }

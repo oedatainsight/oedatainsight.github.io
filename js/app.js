@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
-        interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
+        interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction.description || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
         
         // Add the slide-right class to the selected items
@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const preSupplementationData = interaction.preSupplementation.mean;
         const postSupplementationData = interaction.postSupplementation.mean;
 
+        // Fetch the confidence intervals for the selected enzyme-herb pair
+        const preSupplementationCI = interaction.preSupplementation.CI.split(' to ').map(Number);
+        const postSupplementationCI = interaction.postSupplementation.CI.split(' to ').map(Number);
+
         // Create a new chart
         const ctx = document.getElementById('interactionChart').getContext('2d');
         const chart = new Chart(ctx, {
@@ -85,7 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
               data: [preSupplementationData, postSupplementationData],
               backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
               borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-              borderWidth: 1
+              borderWidth: 1,
+              // Add error bars
+              errorBars: {
+                data: [preSupplementationCI, postSupplementationCI],
+                type: 'custom',
+                symmetric: false
+              }
             }]
           },
           options: {

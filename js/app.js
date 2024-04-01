@@ -74,11 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let sibling of itemContainer.parentNode.children) {
           if (sibling !== itemContainer) {
         sibling.classList.add('faded');
-        sibling.classList.add('slide-right'); // Add slide animation to container
       } else {
         sibling.classList.remove('faded');
-        sibling.classList.add('slide-right'); 
-
           }
         }
       }
@@ -167,7 +164,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the slide-right class to the selected items
         document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
         document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');
+        let itemContainers = document.querySelectorAll('.item-container');
+        for (let itemContainer of itemContainers) {
+          itemContainer.addEventListener('click', function() {
+            // Slide the other item containers to the right
+            for (let sibling of itemContainer.parentNode.children) {
+              if (sibling !== itemContainer) {
+                sibling.style.transform = 'translateX(100px)'; // Adjust as needed
+              }
+            }
 
+            // Fade in the chart
+            let chart = document.getElementById('interactionChart');
+            chart.style.opacity = 0;
+            setTimeout(function() {
+              chart.style.transition = 'opacity 1s'; // Adjust duration as needed
+              chart.style.opacity = 1;
+            }, 20); // Adjust delay as needed
+          });
+        }
         // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
@@ -193,6 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Reset the state and selected items
       window.state = 'enzyme';
       window.selected = {};
+       // Remove the chart
+      let chart = document.getElementById('interactionChart');
+      chart.remove();
 
       // Clear the interaction data
       interactionDisplay.textContent = '';

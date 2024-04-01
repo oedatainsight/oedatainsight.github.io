@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
-
+        
         // Add the slide-right class to the selected items
         document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
         document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');
@@ -70,7 +70,35 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
         }
+        // Fetch the data for the selected enzyme-herb pair
+        const preSupplementationData = interaction.preSupplementation.mean;
+        const postSupplementationData = interaction.postSupplementation.mean;
 
+        // Create a new chart
+        const ctx = document.getElementById('interactionChart').getContext('2d');
+        const chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Pre-supplementation', 'Post-supplementation'],
+            datasets: [{
+              label: window.selected.enzyme,
+              data: [preSupplementationData, postSupplementationData],
+              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      } else {
+        console.log('Data not available');
+      }   
         // Show the "Go Back" button
         document.getElementById('goBack').style.display = 'block';
       } else {
@@ -93,5 +121,5 @@ document.addEventListener('DOMContentLoaded', function() {
       // Reload the page to reset the selection screen
       location.reload();
     });
-  } 
-}); 
+  });
+

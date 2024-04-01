@@ -57,8 +57,7 @@ body {
   animation: slide-right 1s forwards; /* Adjust duration as needed */
 }
 .item-container {
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
+  transition: transform 1s; /* Adjust duration as needed */
 }
 @keyframes fade-in {
   from { opacity: 0; }
@@ -67,12 +66,7 @@ body {
 .fade-in {
   animation: fade-in 1s forwards;
 }
-#interactionChart {
-  width: 500px; /* Adjust as needed */
-  max-width: 20%; /* Adjust as needed */
-  height: 500px; /* Adjust as needed */
-  max-height: 20%; /* Adjust as needed */
-}
+
 #studyDetails {
   display: flex;
   flex-direction: column;

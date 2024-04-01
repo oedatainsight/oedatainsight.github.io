@@ -72,6 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }]
       },
       options: {
+        title: {
+          display: true,
+          text: footnote,
+          fontSize: 20
+        },
         scales: {
           y: {
             beginAtZero: true

@@ -1,6 +1,12 @@
 
 {
+  "studyDetails": {
+    "objectives": "To determine whether long-term supplementation of goldenseal, black cohosh, kava kava, or valerian extracts affected CYP1A2, CYP2D6, CYP2E1, or CYP3A4/5 activity.",
+    "methods": "Twelve healthy volunteers were assigned to receive goldenseal, black cohosh, kava kava, or valerian for 28 days with a washout period between each phase. Probe drug cocktails were administered to measure CYP activity changes.",
+    "conclusions": "Goldenseal strongly inhibited CYP2D6 and CYP3A4/5 activity, kava inhibited CYP2E1, black cohosh weakly inhibited CYP2D6, and valerian showed no significant changes on drug metabolism enzymes. The clinical relevance of these findings is unclear."
+  },
   "CYP2D6": {
+      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (8-hour debrisoquine urinary recovery ratios) for CYP2D6. Group mean ratios are presented with 95% confidence intervals.",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
         "preSupplementation": {
@@ -13,6 +19,7 @@
         }
       },
       "Kava kava": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.62,
           "CI": "0.55 to 0.70"
@@ -34,6 +41,7 @@
         }
       },
       "Valerian": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.64,
           "CI": "0.58 to 0.71"
@@ -45,6 +53,7 @@
       }
     },
     "CYP3A4": {
+      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (1-hydroxymidazolam/ midazolam) for CYP3A4/5. Group mean ratios are presented with 95% confidence intervals.",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
         "preSupplementation": {
@@ -57,6 +66,7 @@
         }
       },
       "Kava kava": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 4.03,
           "CI": "3.17 to 4.90"
@@ -67,6 +77,7 @@
         }
       },
       "Black cohosh": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 3.89,
           "CI": "3.05 to 4.73"
@@ -77,6 +88,7 @@
         }
       },
       "Valerian": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 3.68,
           "CI": "3.30 to 4.06"
@@ -88,7 +100,9 @@
       }
     },
       "CYP2E1": {
+        "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (6-hydroxychlorzoxazone/ chlorzoxazone) for CYP2E1. Group mean ratios are presented with 95% confidence intervals.",
         "Goldenseal": {
+          "description": "No significant change",
           "preSupplementation": {
             "mean": 0.47,
             "CI": "0.39 to 0.56"
@@ -110,6 +124,7 @@
           }
         },
         "Black cohosh": {
+          "description": "No significant change",
           "preSupplementation": {
             "mean": 0.45,
             "CI": "0.35 to 0.54"
@@ -120,6 +135,7 @@
           }
         },
         "Valerian": {
+          "description": "No significant change",
           "preSupplementation": {
             "mean": 0.46,
             "CI": "0.37 to 0.55"
@@ -132,7 +148,9 @@
       },
 
     "CYP1A2": {
+      "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (Paraxanthine/caffeine) for CYP1A2. Group mean ratios are presented with 95% confidence intervals.",
       "Goldenseal": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.47,
           "CI": "0.37 to 0.56"
@@ -143,6 +161,7 @@
         }
       },
       "Kava kava": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.48,
           "CI": "0.36 to 0.61"
@@ -153,6 +172,7 @@
         }
       },
       "Black cohosh": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.47,
           "CI": "0.39 to 0.55"
@@ -163,6 +183,7 @@
         }
       },
       "Valerian": {
+        "description": "No significant change",
         "preSupplementation": {
           "mean": 0.50,
           "CI": "0.38 to 0.62"

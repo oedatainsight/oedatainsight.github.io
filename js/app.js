@@ -47,17 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function populateGrid(gridId, items, type) {
     const grid = document.getElementById(gridId);
-    let container = document.createElement('div'); // Create a container for the images
-    container.style.display = 'inline-block'; // Make the container display its children inline
-    grid.appendChild(container); // Add the container to the grid
+ // Create a container for the images
+    //container.style.display = 'inline-block'; // Make the container display its children inline
+    //grid.appendChild(container); // Add the container to the grid
 
     items.forEach(item => {
-
+      let itemContainer = document.createElement('div'); // Create a container for each item
+      itemContainer.style.display = 'inline-block'; // Make the container display its children inline
       let img = document.createElement('img');
+
       img.classList.add('icon');
       img.src = `images/${type}-icons/${encodeURIComponent(item.toLowerCase())}.png`;
       img.alt = item;
       img.classList.add(`${type}-image`);
+
+      let name = document.createElement('p'); // Create a new p element for the name
+      name.textContent = item; // Set the text content to the item name
+  
       img.addEventListener('click', function() {
         selectItem(type, item);
         // Add the faded class to non-selected images
@@ -69,7 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       });
-      container.appendChild(img); // Add the image to the container instead of the grid
+      itemContainer.appendChild(img); // Add the image to the item container
+      itemContainer.appendChild(name); // Add the name to the item container
+  
+      grid.appendChild(itemContainer); // Add the item container to // Add the image to the container instead of the grid
     });
   }
   // Define the chart update function

@@ -41,7 +41,51 @@ document.addEventListener('DOMContentLoaded', function() {
       container.appendChild(img); // Add the image to the container instead of the grid
     });
   }
+  // Define the chart update function
+  function updateChart(interaction) {
+    // Fetch the data for the selected enzyme-herb pair
+    const preSupplementationData = interaction.preSupplementation.mean;
+    const postSupplementationData = interaction.postSupplementation.mean;
 
+    // Fetch the confidence intervals for the selected enzyme-herb pair
+    const preSupplementationCI = interaction.preSupplementation.CI.split(' to ').map(Number);
+    const postSupplementationCI = interaction.postSupplementation.CI.split(' to ').map(Number);
+
+    // Create a new chart
+    const ctx = document.getElementById('interactionChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Pre-supplementation', 'Post-supplementation'],
+        datasets: [{
+          label: window.selected.enzyme,
+          data: [preSupplementationData, postSupplementationData],
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+          borderWidth: 1,
+          // Add error bars
+          errorBars: {
+            data: [preSupplementationCI, postSupplementationCI],
+            type: 'custom',
+            symmetric: false
+          }
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+  // Call the updateChart function when the enzyme/herb selection happens
+  document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).addEventListener('click', function() {
+    // Assuming `interaction` is the data for the selected enzyme-herb pair
+    updateChart(interaction);
+  });
   function selectItem(type, item) {
     // Check if the user is selecting the correct type
     if (type !== window.state) {
@@ -70,50 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
         }
-        // Fetch the data for the selected enzyme-herb pair
-        const preSupplementationData = interaction.preSupplementation.mean;
-        const postSupplementationData = interaction.postSupplementation.mean;
+        updateChart(interaction);
 
-        // Fetch the confidence intervals for the selected enzyme-herb pair
-        const preSupplementationCI = interaction.preSupplementation.CI.split(' to ').map(Number);
-        const postSupplementationCI = interaction.postSupplementation.CI.split(' to ').map(Number);
-
-        // Create a new chart
-        const ctx = document.getElementById('interactionChart').getContext('2d');
-        const chart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Pre-supplementation', 'Post-supplementation'],
-            datasets: [{
-              label: window.selected.enzyme,
-              data: [preSupplementationData, postSupplementationData],
-              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-              borderWidth: 1,
-              // Add error bars
-              errorBars: {
-                data: [preSupplementationCI, postSupplementationCI],
-                type: 'custom',
-                symmetric: false
-              }
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
       } else {
         console.log('Data not available');
       }   
         // Show the "Go Back" button
-        document.getElementById('goBack').style.display = 'block';
-      } else {
-        console.log('Data not available');
-      }
+      document.getElementById('goBack').style.display = 'block';
     }
 
     // Add a click event listener to the "Go Back" button
@@ -131,5 +138,5 @@ document.addEventListener('DOMContentLoaded', function() {
       // Reload the page to reset the selection screen
       location.reload();
     });
-  });
-
+  }
+});

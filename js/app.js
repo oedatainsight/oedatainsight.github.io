@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       name.textContent = item; // Set the text content to the item name
   
       img.addEventListener('click', function() {
+        if (!window.selected[type]) {
         selectItem(type, item);
         // Add the faded class to non-selected images
 
@@ -84,7 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
           }
         }
-      });
+      }
+    });
+    
       itemContainer.appendChild(img); // Add the image to the item container
       itemContainer.appendChild(name); // Add the name to the item container
   

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Populate the enzyme and herb grids
       populateGrid('enzymeGrid', ["CYP3A4", "CYP1A2", "CYP2D6", "CYP2E1"], 'enzyme');
-      populateGrid('herbGrid', ["Goldenseal", "Black Cohosh", "Valerian", "Kava"], 'herb');
+      populateGrid('herbGrid', ["Goldenseal", "Black Cohosh", "Valerian", "Kava kava"], 'herb');
     });
 
   function populateGrid(gridId, items, type) {

@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch the confidence intervals for the selected enzyme-herb pair
     const preSupplementationCI = interaction.preSupplementation.CI.split(' to ').map(Number);
     const postSupplementationCI = interaction.postSupplementation.CI.split(' to ').map(Number);
-
+    const footnote = window.studyData[enzyme].footnote;
     // Create a new chart
     const ctx = document.getElementById('interactionChart').getContext('2d');
     const chart = new Chart(ctx, {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
-        const interaction = window.studyData[window.selected.enzyme][window.selected.herb];
+        const interaction = window.studyData[window.selected.enzyme][window.selected.herb].description;
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction.description || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
         

@@ -43,11 +43,16 @@ body {
 }
 
 @keyframes slide-right {
-  to { transform: translateX(300px); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); } /* Adjust as needed */
 }
 
-@keyframes slide-right {
-  100% { transform: translateX(100%); }
+.slide-right {
+  animation: slide-right 1s forwards; /* Adjust duration as needed */
+}
+.item-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
 }
 @keyframes fade-in {
   from { opacity: 0; }
@@ -57,9 +62,10 @@ body {
   animation: fade-in 1s forwards;
 }
 #interactionChart {
-  width: 100px;
-  max-width: 30%; /* Ensure the chart doesn't overflow its container */
-  height: 100px;
+  width: 50px; /* Adjust as needed */
+  max-width: 20%; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  max-height: 20%; /* Adjust as needed */
 }
 #studyDetails {
   display: flex;

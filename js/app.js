@@ -74,20 +74,25 @@ document.addEventListener('DOMContentLoaded', function() {
       
             sibling.classList.add('faded');
             sibling.querySelector('p').classList.add('hidden');
-            sibling.querySelector('p').classList.add('slide-right'); // Add slide animation
+            sibling.querySelector('p').classList.add('slide-right');
+            sibling.querySelector('img').classList.add('slide-right'); // Add slide animation to image
+
+             // Add slide animation
 
     
           } else {
             sibling.classList.remove('faded');
             sibling.querySelector('p').classList.remove('hidden'); // Show the name
-            sibling.querySelector('p').classList.add('slide-right'); // Add slide animation
+            sibling.querySelector('p').classList.add('slide-right'); //
+            sibling.querySelector('img').classList.add('slide-right'); // Add slide animation to image
+            //Add slide animation
 
 
           }
         }
       }
     });
-    
+
       itemContainer.appendChild(img); // Add the image to the item container
       itemContainer.appendChild(name); // Add the name to the item container
   

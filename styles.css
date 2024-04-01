@@ -108,3 +108,32 @@ body {
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Centers the container horizontally */
 }
+.toolbar {
+  display: flex;
+  justify-content: space-around; /* Distributes the buttons evenly */
+  padding: 10px;
+  background-color: #3b4fcc; /* Change as needed */
+}
+
+.toolbar button {
+  padding: 10px 20px; /* Change as needed */
+  font-size: 16px; /* Change as needed */
+  /* Add more styles as needed */
+}
+.toolbar button:hover {
+  background-color: #2e3ea6; /* Change as needed */
+  color: white; /* Change as needed */
+}
+.toolbar button:active {
+  background-color: #1f2e66; /* Change as needed */
+}
+.toolbar button:focus {
+  outline: none; /* Remove the default focus style */
+}
+resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}

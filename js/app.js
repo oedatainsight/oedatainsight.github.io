@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Methods</h2>
       <p>${studyDetailsData.methods}</p>
     `;
-
+    resultsContainer.innerHTML = `
+      <h2>Results</h2>
+      <p>Explore the effects of the herbal supplements on CYP metabolizing ratios by selecting an enzyme and herb</p>
+    `;
+  
     conclusionsContainer.innerHTML = `
       <h2>Conclusions</h2>
       <p>${studyDetailsData.conclusions}</p>
@@ -89,8 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
           label:metabolizingAgent,
           data: [preSupplementationData, postSupplementationData],
           backgroundColor: ['rgba(255, 99, 132, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+          borderColor: ['rgba(255, 99, 132, 1)'],
           borderWidth: 1,
+  
           // Add error bars
           errorBars: {
             data: [preSupplementationCI, postSupplementationCI],

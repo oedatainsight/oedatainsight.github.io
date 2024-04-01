@@ -122,7 +122,7 @@ body {
 }
 .toolbar button:hover {
   background-color: #2e3ea6; /* Change as needed */
-  color: white; /* Change as needed */
+  color: #2e3ea6; /* Change as needed */
 }
 .toolbar button:active {
   background-color: #1f2e66; /* Change as needed */

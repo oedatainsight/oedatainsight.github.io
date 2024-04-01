@@ -140,10 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if the user is selecting the correct type
     if (window.selected[type]) {
       alert(`You have already selected a ${type}.`);
-      return;
-      } else {
-        selectItem(type, item);
-    }
+    }     // Check if the user is selecting the correct type  
+    
+      else
     // Store the selected item
     window.selected[type] = item;
 

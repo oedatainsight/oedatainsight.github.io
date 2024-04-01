@@ -116,23 +116,28 @@ body {
 }
 .toolbar {
   display: flex;
-  padding: 10px 0; /* Adjust as needed */
+  padding: 0px 10; /* Adjust as needed */
+  cursor: pointer;
   justify-content: space-around; /* Distributes the buttons evenly */
   background-color: #3b4fcc; /* Change as needed */
    align-items: center; /* Adjust as needed */
+  
 }
 
 .toolbar button {
   padding: 12px 20px; /* Change as needed */
   font-size: 16px; /* Change as needed */
+  cursor: pointer;
   /* Add more styles as needed */
 }
 .toolbar button:hover {
   background-color: #2e3ea6; /* Change as needed */
   color: #eeeff2; /* Change as needed */
+  cursor: pointer;
 }
 .toolbar button:active {
-  background-color: #1f2e66; /* Change as needed */
+  background-color: #1f2e66; 
+  /* Change as needed */
 }
 .toolbar button:focus {
   outline: none; /* Remove the default focus style */

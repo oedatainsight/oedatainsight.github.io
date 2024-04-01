@@ -98,10 +98,13 @@ body {
 #conclusionsContainer h2, #methodsContainer h2, #objectivesContainer h2, #resultsContainer h2{
   margin-bottom: 10px; /* Add some space below the heading */
 }
-#conclusionsContainer p, #methodsContainer p, #objectivesContainer p, #resultsContainer p {
+#conclusionsContainer p, #methodsContainer p, #objectivesContainer p {
   margin-bottom: 10px; /* Add some space below the paragraph */
 }
-
+#resultsContainer p {
+  font-weight: bold;
+  margin-bottom: 10px; /* Add some space below the paragraph */
+}
 #centeredContainer {
   display: flex;
   flex-direction: column;

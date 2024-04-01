@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const objectivesContainer = document.getElementById('objectivesContainer');
     const methodsContainer = document.getElementById('methodsContainer');
     const conclusionsContainer = document.getElementById('conclusionsContainer');
+    const resultsContainer = document.getElementById('resultsContainer');
     const studyDetailsData = window.studyData.studyDetails;
 
     objectivesContainer.innerHTML = `

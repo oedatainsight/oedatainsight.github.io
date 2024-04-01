@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       populatStudyDetails();
     }); 
     function populatStudyDetails() {
+    
     const objectivesContainer = document.getElementById('objectivesContainer');
     const methodsContainer = document.getElementById('methodsContainer');
     const conclusionsContainer = document.getElementById('conclusionsContainer');
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     // Create a new chart
     const ctx = document.getElementById('interactionChart').getContext('2d');
+    ctx.canvas.height = 200;
     const chart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         datasets: [{
           label:metabolizingAgent,
           data: [preSupplementationData, postSupplementationData],
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.2)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
           borderWidth: 1,
           // Add error bars

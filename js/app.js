@@ -103,9 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb].description;
-        interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction.description || 'Data not available'}`;
+        interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interaction || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
-        
         // Add the slide-right class to the selected items
         document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
         document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');

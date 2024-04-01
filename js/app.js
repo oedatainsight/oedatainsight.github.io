@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     resultsContainer.innerHTML = `
       <h2>Results</h2>
-      <p>Explore the effects of the herbal supplements on CYP metabolizing ratios by selecting an enzyme and herb</p>
+      <p>Interactive Graph: 
+      Explore what this study found on the effects of the herbal supplemmentation on CYP metabolizing ratios. Select an enzyme and a herbal supplent
+      </p>
     `;
 
     conclusionsContainer.innerHTML = `

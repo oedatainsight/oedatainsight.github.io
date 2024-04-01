@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb]
         const interactionDescription = window.studyData[window.selected.enzyme][window.selected.herb].description;
-        const footnote = interaction.footnote;
+        const footnote =  window.studyData[window.selected.enzyme].footnote;
+
 
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
@@ -119,11 +120,14 @@ document.addEventListener('DOMContentLoaded', function() {
           image.remove();
         }
         updateChart(interaction);
+        const footnoteDisplay = document.getElementById('footnoteDisplay');
+        footnoteDisplay.textContent = footnote || 'Footnote not available';
+        footnoteDisplay.classList.add('fade-in');
+        // Display the "Go Back" button
+        document.getElementById('goBack').style.display = 'block';
+        
       }   
-      const footnoteDisplay = document.getElementById('footnoteDisplay');
-      footnoteDisplay.textContent = footnote || 'Footnote not available';
-      footnoteDisplay.classList.add('fade-in');
-      document.getElementById('goBack').style.display = 'block';
+      
     }
 
     // Add a click event listener to the "Go Back" button

@@ -7,7 +7,13 @@ body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
 }
-
+#header {
+  background-color: #2e3ea6;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
 .selector {
   display: flex;
   justify-content: center;
@@ -62,9 +68,9 @@ body {
   animation: fade-in 1s forwards;
 }
 #interactionChart {
-  width: 50px; /* Adjust as needed */
+  width: 500px; /* Adjust as needed */
   max-width: 20%; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
+  height: 500px; /* Adjust as needed */
   max-height: 20%; /* Adjust as needed */
 }
 #studyDetails {

@@ -116,7 +116,7 @@ body {
 }
 .toolbar {
   display: flex;
-  padding: 0px 10; /* Adjust as needed */
+  padding: 10px 0; /* Adjust as needed */
   cursor: pointer;
   justify-content: space-around; /* Distributes the buttons evenly */
   background-color: #3b4fcc; /* Change as needed */

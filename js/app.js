@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     grid.appendChild(container); // Add the container to the grid
 
     items.forEach(item => {
+
       let img = document.createElement('img');
       img.classList.add('icon');
       img.src = `images/${type}-icons/${encodeURIComponent(item.toLowerCase())}.png`;

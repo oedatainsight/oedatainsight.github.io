@@ -164,15 +164,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the slide-right class to the selected items
         document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
         document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');
-        let itemContainers = document.querySelectorAll('.item-container');
-        for (let itemContainer of itemContainers) {
-          itemContainer.addEventListener('click', function() {
-            // Slide the other item containers to the right
-            for (let sibling of itemContainer.parentNode.children) {
-              if (sibling !== itemContainer) {
-                sibling.style.transform = 'translateX(100px)'; // Adjust as needed
-              }
-            }
+        let enzymeGrid = document.getElementById('enzymeGrid');
+        let herbGrid = document.getElementById('herbGrid');
+        let interactionDisplay = document.getElementById('interactionDisplay');
+
+        enzymeGrid.addEventListener('click', function(e) {
+          if (e.target.classList.contains('enzyme')) {
+            // Slide the selected enzyme to the right
+            e.target.style.transform = 'translateX(100px)'; // Adjust as needed
+
+            // Populate the interactionDisplay
+            interactionDisplay.innerHTML = 'Enzyme selected: ' + e.target.textContent;
 
             // Fade in the chart
             let chart = document.getElementById('interactionChart');
@@ -180,9 +182,19 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
               chart.style.transition = 'opacity 1s'; // Adjust duration as needed
               chart.style.opacity = 1;
-            }, 20); // Adjust delay as needed
-          });
-        }
+            }, 1000); // Adjust delay as needed
+          }
+        });
+
+        herbGrid.addEventListener('click', function(e) {
+          if (e.target.classList.contains('herb')) {
+            // Slide the selected herb to the right
+            e.target.style.transform = 'translateX(100px)'; // Adjust as needed
+
+            // Populate the interactionDisplay
+            interactionDisplay.innerHTML += '<br>Herb selected: ' + e.target.textContent;
+          }
+        });
         // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();

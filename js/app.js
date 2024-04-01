@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
             sibling.classList.add('faded');
             sibling.querySelector('p').classList.add('hidden');
             sibling.querySelector('p').classList.add('slide-right');
-            sibling.querySelector('img').classList.add('slide-right'); // Add slide animation to image
 
              // Add slide animation
 
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
             sibling.classList.remove('faded');
             sibling.querySelector('p').classList.remove('hidden'); // Show the name
             sibling.querySelector('p').classList.add('slide-right'); //
-            sibling.querySelector('img').classList.add('slide-right'); // Add slide animation to image
             //Add slide animation
 
 

@@ -87,10 +87,12 @@ body {
   background-color: #f9f9f9; /* Change the background color */
 } 
 #methodsContainer {
-  background-color: #e9e9e9; /* Change the background color */
+  background-color: #e9e9e9;
+  max-width: 30%; /* Change the background color */
 }
 #objectivesContainer {
-  background-color: #e9e9e9; /* Change the background color */
+  background-color: #e9e9e9; 
+  max-width: 30%;/* Change the background color */
 }
 #conclusionsContainer h2, #methodsContainer h2, #objectivesContainer h2 {
   margin-bottom: 10px; /* Add some space below the heading */
@@ -161,7 +163,8 @@ resultsContainer {
 }
 
 .dropbtn {
-  background-color: #e9e9e9;
+  background-color: black
+;
   color: black;
   padding: 16px;
   font-size: 16px;

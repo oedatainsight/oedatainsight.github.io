@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Populate the enzyme and herb grids
       populateGrid('enzymeGrid', ["CYP3A4", "CYP1A2", "CYP2D6", "CYP2E1"], 'enzyme');
       populateGrid('herbGrid', ["Goldenseal", "Black Cohosh", "Valerian", "Kava kava"], 'herb');
-    });
-    
+      populatStudyDetails();
+    }); 
+    function populatStudyDetails() {
     const objectivesContainer = document.getElementById('objectivesContainer');
     const methodsContainer = document.getElementById('methodsContainer');
     const conclusionsContainer = document.getElementById('conclusionsContainer');
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Conclusions</h2>
       <p>${studyDetailsData.conclusions}</p>
     `;
+  }
+  // Define the function to populate the enzyme and herb grids  
 
   function populateGrid(gridId, items, type) {
     const grid = document.getElementById(gridId);

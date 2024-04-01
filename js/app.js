@@ -81,11 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Call the updateChart function when the enzyme/herb selection happens
-  document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).addEventListener('click', function() {
-    // Assuming `interaction` is the data for the selected enzyme-herb pair
-    updateChart(interaction);
-  });
   function selectItem(type, item) {
     // Check if the user is selecting the correct type
     if (type !== window.state) {

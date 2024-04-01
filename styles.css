@@ -191,3 +191,14 @@ resultsContainer {
 .dropdown-content p {
   margin: 0;
 }
+
+footer {
+  background-color: #2e3ea6;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

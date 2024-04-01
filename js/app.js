@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Results</h2>
       <p>Explore the effects of the herbal supplements on CYP metabolizing ratios by selecting an enzyme and herb</p>
     `;
-  
+
     conclusionsContainer.innerHTML = `
       <h2>Conclusions</h2>
       <p>${studyDetailsData.conclusions}</p>

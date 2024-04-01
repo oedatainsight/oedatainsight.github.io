@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb]
-        const interactionDescription = window.studyData[window.selected.enzyme][window.selected.herb].description;
+        const interactionDescription = interaction.description;
 
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class

@@ -148,9 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Store the selected item
     window.selected[type] = item;
 
-    // Update the state
-    //window.state = window.state === 'enzyme' ? 'herb' : 'enzyme';
-
     // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
@@ -158,62 +155,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const interactionDescription = window.studyData[window.selected.enzyme][window.selected.herb].description;
         const footnote =  window.studyData[window.selected.enzyme].footnote;
 
-
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
-        // Add the slide-right class to the selected items
-        document.querySelector(`.enzyme-image[alt="${window.selected.enzyme}"]`).classList.add('slide-right', 'selected');
-        document.querySelector(`.herb-image[alt="${window.selected.herb}"]`).classList.add('slide-right', 'selected');
-        let enzymeGrid = document.getElementById('enzymeGrid');
-        let herbGrid = document.getElementById('herbGrid');
-        let interactionDisplay = document.getElementById('interactionDisplay');
 
-        enzymeGrid.addEventListener('click', function(e) {
-          if (e.target.classList.contains('enzyme')) {
-            // Slide the selected enzyme to the right
-            e.target.style.transform = 'translateX(100px)'; // Adjust as needed
+        // Calculate the target position (e.g., the right edge of the screen)
+        let targetPosition = window.innerWidth;
 
-            // Populate the interactionDisplay
-            interactionDisplay.innerHTML = 'Enzyme selected: ' + e.target.textContent;
+        // Slide the selected items to the target position
+        for (let element of document.querySelectorAll(`.enzyme-image[alt="${window.selected.enzyme}"], .herb-image[alt="${window.selected.herb}"], .enzyme-name:contains("${window.selected.enzyme}"), .herb-name:contains("${window.selected.herb}")`)) {
+          let currentPosition = element.getBoundingClientRect().right;
+          let distance = targetPosition - currentPosition;
+          element.style.transform = `translateX(${distance}px)`;
+          element.classList.add('selected');
+        }
+         // Move the chart to the target position
+          let chart = document.getElementById('interactionChart');
+          chart.style.position = 'absolute';
+          chart.style.left = `${targetPosition}px`;
+          chart.style.top = '0px'; // Adjust as needed
 
-            // Fade in the chart
-            let chart = document.getElementById('interactionChart');
-            chart.style.opacity = 0;
-            setTimeout(function() {
-              chart.style.transition = 'opacity 1s'; // Adjust duration as needed
-              chart.style.opacity = 1;
-            }, 1000); // Adjust delay as needed
-          }
-        });
-
-        herbGrid.addEventListener('click', function(e) {
-          if (e.target.classList.contains('herb')) {
-            // Slide the selected herb to the right
-            e.target.style.transform = 'translateX(100px)'; // Adjust as needed
-
-            // Populate the interactionDisplay
-            interactionDisplay.innerHTML += '<br>Herb selected: ' + e.target.textContent;
-          }
-        });
         // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
         }
-
-    // Remove non-selected words
-        for (let word of document.querySelectorAll('.enzyme-name:not(.selected), .herb-name:not(.selected)')) {
-          word.remove();
-        }
-        updateChart(interaction);
-        const footnoteDisplay = document.getElementById('footnoteDisplay');
-        footnoteDisplay.textContent = footnote || 'Footnote not available';
-        footnoteDisplay.classList.add('fade-in');
-        // Display the "Go Back" button
-        document.getElementById('goBack').style.display = 'block';
-        
-      }   
-      
-    }
+      }
+    }// Update the state
 
     document.getElementById('goBack').style.display = 'block';
     document.getElementById('goBack').addEventListener('click', function() {

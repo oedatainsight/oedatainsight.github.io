@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function selectItem(type, item) {
     // Check if the user is selecting the correct type
-    if (type !== window.state) {
-      alert(`Please select an ${window.state} first.`);
+    if (window.selected[type]) {
+      alert(`You have already selected a ${type}.`);
       return;
     }
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.selected[type] = item;
 
     // Update the state
-    window.state = window.state === 'enzyme' ? 'herb' : 'enzyme';
+    //window.state = window.state === 'enzyme' ? 'herb' : 'enzyme';
 
     // If both an enzyme and a herb are selected, display the interaction data
     if (window.selected.enzyme && window.selected.herb) {

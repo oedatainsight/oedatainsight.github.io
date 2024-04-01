@@ -67,16 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
       img.addEventListener('click', function() {
         selectItem(type, item);
         // Add the faded class to non-selected images
+
         for (let sibling of itemContainer.parentNode.children) {
           if (sibling !== itemContainer) {
       
             sibling.classList.add('faded');
-            sibling.querySelector('p').classList.add('hidden'); // Hide the name
+            sibling.querySelector('p').classList.add('hidden');
+            sibling.querySelector('p').classList.add('slide-right'); // Add slide animation
 
-          
+    
           } else {
             sibling.classList.remove('faded');
             sibling.querySelector('p').classList.remove('hidden'); // Show the name
+            sibling.querySelector('p').classList.add('slide-right'); // Add slide animation
+
 
           }
         }
@@ -141,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected[type]) {
       alert(`You have already selected a ${type}.`);
     }     // Check if the user is selecting the correct type  
-    
+
       else
     // Store the selected item
     window.selected[type] = item;

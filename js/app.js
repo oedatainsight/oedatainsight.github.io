@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch the confidence intervals for the selected enzyme-herb pair
     const preSupplementationCI = interaction.preSupplementation.CI.split(' to ').map(Number);
     const postSupplementationCI = interaction.postSupplementation.CI.split(' to ').map(Number);
-    const footnote = window.studyData[window.selected.enzyme][window.selected.herb].footnote || 'Data not available';
+    const footnote = window.studyData[window.selected.enzyme].footnote;
+    const metabolizingAgent = window.studyData[window.selected.enzyme].metabolizingagent;
         
     // Create a new chart
     const ctx = document.getElementById('interactionChart').getContext('2d');
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
       data: {
         labels: ['Pre-supplementation', 'Post-supplementation'],
         datasets: [{
-          label: window.selected.enzyme,
+          label:metabolizingAgent,
           data: [preSupplementationData, postSupplementationData],
           backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb]
-        const interactionDescription = interaction.description;
+        const interactionDescription = window.studyData[window.selected.enzyme].description;
 
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class

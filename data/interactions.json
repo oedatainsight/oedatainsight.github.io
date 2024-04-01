@@ -7,6 +7,7 @@
   },
   "CYP2D6": {
       "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (8-hour debrisoquine urinary recovery ratios) for CYP2D6. Group mean ratios are presented with 95% confidence intervals.",
+      "metabolizingagent":"8-hour debrisoquine urinary recovery ratios",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
         "preSupplementation": {
@@ -54,6 +55,7 @@
     },
     "CYP3A4": {
       "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (1-hydroxymidazolam/ midazolam) for CYP3A4/5. Group mean ratios are presented with 95% confidence intervals.",
+      "metabolizingagent":"1-hydroxymidazolam/ midazolam ratios",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
         "preSupplementation": {
@@ -101,6 +103,7 @@
     },
       "CYP2E1": {
         "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (6-hydroxychlorzoxazone/ chlorzoxazone) for CYP2E1. Group mean ratios are presented with 95% confidence intervals.",
+        "metabolizingagent":"6-hydroxychlorzoxazone/ chlorzoxazone ratios",
         "Goldenseal": {
           "description": "No significant change",
           "preSupplementation": {
@@ -149,6 +152,7 @@
 
     "CYP1A2": {
       "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (Paraxanthine/caffeine) for CYP1A2. Group mean ratios are presented with 95% confidence intervals.",
+      "metabolizingagent":"Paraxanthine/caffeine ratios", 
       "Goldenseal": {
         "description": "No significant change",
         "preSupplementation": {

@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
       img.addEventListener('click', function() {
         selectItem(type, item);
         // Add the faded class to non-selected images
-        for (let image of container.children) {
-          if (image.alt !== item) {
-            image.classList.add('faded');
+        for (let sibling of itemContainer.parentNode.children) {
+          if (sibling !== itemContainer) {
+            sibling.classList.add('faded');
           } else {
-            image.classList.remove('faded');
+            sibling.classList.remove('faded');
           }
         }
       });

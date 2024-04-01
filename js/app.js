@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected.enzyme && window.selected.herb) {
       if (window.studyData && window.studyData[window.selected.enzyme]) {
         const interaction = window.studyData[window.selected.enzyme][window.selected.herb]
-        const interactionDescription = window.studyData[window.selected.enzyme].description;
+        const interactionDescription = window.studyData[window.selected.enzyme][window.selected.herb].description;
+        const footnote = interaction.footnote;
 
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
@@ -119,7 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         updateChart(interaction);
       }   
-        // Show the "Go Back" button
+      const footnoteDisplay = document.getElementById('footnoteDisplay');
+      footnoteDisplay.textContent = footnote || 'Footnote not available';
+      footnoteDisplay.classList.add('fade-in');
       document.getElementById('goBack').style.display = 'block';
     }
 

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+  
   const interactionDisplay = document.getElementById('interactionDisplay');
   window.selected = { enzyme: null, herb: null };
-  window.state = 'enzyme'; // Initialize the state
+  window.state = 'enzyme'; // Initialize the state\
 
   // Fetch the data from your study
   fetch('/data/interactions.json')
@@ -14,6 +15,26 @@ document.addEventListener('DOMContentLoaded', function() {
       populateGrid('enzymeGrid', ["CYP3A4", "CYP1A2", "CYP2D6", "CYP2E1"], 'enzyme');
       populateGrid('herbGrid', ["Goldenseal", "Black Cohosh", "Valerian", "Kava kava"], 'herb');
     });
+    
+    const objectivesContainer = document.getElementById('objectivesContainer');
+    const methodsContainer = document.getElementById('methodsContainer');
+    const conclusionsContainer = document.getElementById('conclusionsContainer');
+    const studyDetailsData = window.studyData.studyDetails;
+
+    objectivesContainer.innerHTML = `
+      <h2>Objectives</h2>
+      <p>${studyDetailsData.objectives}</p>
+    `;
+
+    methodsContainer.innerHTML = `
+      <h2>Methods</h2>
+      <p>${studyDetailsData.methods}</p>
+    `;
+
+    conclusionsContainer.innerHTML = `
+      <h2>Conclusions</h2>
+      <p>${studyDetailsData.conclusions}</p>
+    `;
 
   function populateGrid(gridId, items, type) {
     const grid = document.getElementById(gridId);

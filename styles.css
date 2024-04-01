@@ -239,3 +239,6 @@ footer {
   border-radius: 5px;
   cursor: pointer;
 }
+.hidden {
+  display: none;
+}

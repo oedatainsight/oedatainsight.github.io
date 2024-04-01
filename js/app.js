@@ -69,15 +69,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the faded class to non-selected images
         for (let sibling of itemContainer.parentNode.children) {
           if (sibling !== itemContainer) {
-            if (window.selected[type]) {
-              alert(`You have already selected a ${type}. You can't select more than one.`);
-              return;
-            } else {
-              selectItem(type, item);
+      
             sibling.classList.add('faded');
-            }
+            sibling.querySelector('p').classList.add('hidden'); // Hide the name
+
+          
           } else {
             sibling.classList.remove('faded');
+            sibling.querySelector('p').classList.remove('hidden'); // Show the name
+
           }
         }
       });
@@ -141,8 +141,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.selected[type]) {
       alert(`You have already selected a ${type}.`);
       return;
+      } else {
+        selectItem(type, item);
     }
-
     // Store the selected item
     window.selected[type] = item;
 

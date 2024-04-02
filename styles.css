@@ -6,6 +6,8 @@ body {
   margin: 10;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: auto;
 }
 #header {
   background-color: #2e3ea6;

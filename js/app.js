@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChart(interaction);
         footnote
         // Get the chart container
-        const chartContainer = document.getElementById('chart-container');
+        const chartContainer = document.getElementById('interactionChart');
 
         // Check if chartContainer exists
         if (chartContainer) {

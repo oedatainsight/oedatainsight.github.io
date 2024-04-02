@@ -99,6 +99,7 @@ body, html {
   line-height: 1.5; /* Change the line height */
   max-width: 50%; /* Change the maximum width */
   background-color: #e9e9e9;
+  padding: 20px;
     /* Add more styles as needed *  
 }  
 #conclusionsContainer { 
@@ -113,7 +114,9 @@ body, html {
   max-width: 50%;/* Change the background color */
 }
 #conclusionsContainer h2, #methodsContainer h2, #objectivesContainer h2, #resultsContainer h2, #referencesContainer h2, #appendixContainer h2{
-  margin-bottom: 10px; /* Add some space below the heading */
+  margin-bottom: 10px;
+  text-align: center;
+   /* Add some space below the heading */
 }
 #conclusionsContainer p, #methodsContainer p, #objectivesContainer p {
   margin-bottom: 10px; /* Add some space below the paragraph */

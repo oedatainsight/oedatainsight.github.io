@@ -157,33 +157,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
+            // Define the target positions for the enzyme and herb containers
+            let enzymeTargetPosition = document.querySelector('#CYP2E1').getBoundingClientRect().right;
+            let herbTargetPosition = document.querySelector('#Kava').getBoundingClientRect().right;
 
-            // Calculate the target positions based on the positions of the CYP2E1 and Kava Kava images
-        let cyp2e1Image = document.querySelector('.enzyme-image[alt="CYP2E1"]');
-        let kavaKavaImage = document.querySelector('.herb-image[alt="Kava kava"]');
-        let enzymeTargetPosition = cyp2e1Image.getBoundingClientRect().right;
-        let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
-
-            // Slide all enzyme containers to the position of the CYP2E1 container
-            for (let element of document.querySelectorAll('.enzyme-container')) {
-              let currentPosition = element.getBoundingClientRect().right;
-              let distance = enzymeTargetPosition - currentPosition + index * 100; // Add an offset based on the index
-              element.style.transform = `translateX(${distance}px)`;
-              element.classList.add('selected');
+            // Slide all selected enzyme containers to the position of the CYP2E1 container
+            for (let container of document.querySelectorAll('.enzyme-container')) {
+              if (container.classList.contains('selected')) {
+                let currentPosition = container.getBoundingClientRect().right;
+                let distance = enzymeTargetPosition - currentPosition;
+                container.style.transform = `translateX(${distance}px)`;
+              } else {
+                container.remove();
+              }
             }
 
-            // Slide all herb containers to the position of the Kava Kava container
-            for (let element of document.querySelectorAll('.herb-container')) {
-              let currentPosition = element.getBoundingClientRect().right;
-              let distance = herbTargetPosition - currentPosition + index * 100; // Add an offset based on the index
-              element.style.transform = `translateX(${distance}px)`;
-              element.classList.add('selected');
-            }
-
-            // Remove non-selected items
-            for (let itemContainer of document.querySelectorAll('#enzymeGrid div, #herbGrid div')) {
-              if (itemContainer.querySelector('.faded')) {
-                itemContainer.remove();
+            // Slide all selected herb containers to the position of the Kava Kava container
+            for (let container of document.querySelectorAll('.herb-container')) {
+              if (container.classList.contains('selected')) {
+                let currentPosition = container.getBoundingClientRect().right;
+                let distance = herbTargetPosition - currentPosition;
+                container.style.transform = `translateX(${distance}px)`;
+              } else {
+                container.remove();
               }
             }
       }

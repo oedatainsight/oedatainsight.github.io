@@ -203,19 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
         moveSelectedEnzymeAndHerb(window.selected.enzyme, window.selected.herb);
         // Update the chart
         updateChart(interaction);
-        // Get the chart container
-        const chartContainer = document.getElementById('chart-container');
+        footnote
 
-        // Remove any existing footnote
-      
-        // Create a new paragraph element for the footnote
-        const footnoteElement = document.createElement('p');
-
-        // Set the text of the footnote element
-        footnoteElement.textContent = window.studyData[window.selected.enzyme].footnote;
-
-        // Add the footnote element to the chart container
-        chartContainer.appendChild(footnoteElement);
 
             }
       }
@@ -229,8 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
        // Remove the chart
       let chart = document.getElementById('interactionChart');
       chart.remove();
-      const existingFootnote = document.querySelector('#chartContainer p');
-        if (existingFootnote) existingFootnote.remove();
 
       // Clear the interaction data
       interactionDisplay.textContent = '';

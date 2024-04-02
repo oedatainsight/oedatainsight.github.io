@@ -164,31 +164,28 @@ document.addEventListener('DOMContentLoaded', function() {
         let enzymeTargetPosition = cyp2e1Image.getBoundingClientRect().right;
         let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
 
-            // Slide all enzyme images to the position of the CYP2E1 image
-            // Slide all enzyme images to the position of the CYP2E1 image
-            for (let element of document.querySelectorAll('.enzyme-image')) {
+            // Slide all enzyme containers to the position of the CYP2E1 container
+            for (let element of document.querySelectorAll('.enzyme-container')) {
               let currentPosition = element.getBoundingClientRect().right;
-              let distance = enzymeTargetPosition - currentPosition;
-              console.log(`Enzyme image: initial position = ${currentPosition}, distance = ${distance}`);
-              element.classList.add('slide'); // Add the slide class
+              let distance = enzymeTargetPosition - currentPosition + index * 100; // Add an offset based on the index
               element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');
             }
 
-            // Slide all herb images to the position of the Kava Kava image
-            for (let element of document.querySelectorAll('.herb-image')) {
+            // Slide all herb containers to the position of the Kava Kava container
+            for (let element of document.querySelectorAll('.herb-container')) {
               let currentPosition = element.getBoundingClientRect().right;
-              let distance = herbTargetPosition - currentPosition;
-              console.log(`Herb image: initial position = ${currentPosition}, distance = ${distance}`);
-              element.classList.add('slide'); // Add the slide class
+              let distance = herbTargetPosition - currentPosition + index * 100; // Add an offset based on the index
               element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');
             }
 
             // Remove non-selected items
-        for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
-          image.remove();
-        }
+            for (let itemContainer of document.querySelectorAll('#enzymeGrid div, #herbGrid div')) {
+              if (itemContainer.querySelector('.faded')) {
+                itemContainer.remove();
+              }
+            }
       }
     }// Update the state
 

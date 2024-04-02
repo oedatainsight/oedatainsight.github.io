@@ -204,9 +204,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the chart
         updateChart(interaction);
         footnote
+        // Get the chart container
+        const chartContainer = document.getElementById('chart-container');
 
+        // Check if chartContainer exists
+        if (chartContainer) {
+          // Remove any existing footnote
+          const existingFootnote = document.querySelector('#chart-container p');
+          if (existingFootnote) existingFootnote.remove();
 
-            }
+          // Create a new paragraph element for the footnote
+          const footnoteElement = document.createElement('p');
+
+          // Set the text of the footnote element
+          footnoteElement.textContent = window.studyData[window.selected.enzyme].footnote;
+
+          // Add the footnote element to the chart container
+          chartContainer.appendChild(footnoteElement);
+        } else {
+          console.error('chart-container not found');
+        }
+
+        }
       }
     // Update the state
 

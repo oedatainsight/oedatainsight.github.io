@@ -11,31 +11,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
       console.error('Error loading JSON data:', error);
     });
 
-    function buildTable(data) {
-      // Access your HTML table
+    function buildTable(jsonData) {
       const table = document.getElementById('supplementsTable');
-      
-      // Use the JSON data to add rows and cells to the table
-      data.supplements.forEach(supplement => {
-        // Create a new row for each supplement
-        let row = table.insertRow();
-        let cell = row.insertCell();
-        cell.textContent = supplement.name;
-        
-        // Now loop through each compound of the supplement
+    
+      jsonData.supplements.forEach(supplement => {
         supplement.compounds.forEach((compound, index) => {
-          if (index === 0) {
-            cell = row.insertCell();
-            cell.textContent = compound.name;
-            // Add more cells for content, daily dose, etc.
-          } else {
-            // Insert new rows for additional compounds
-            row = table.insertRow();
-            row.insertCell().textContent = ''; // Empty cell for supplement column
-            row.insertCell().textContent = compound.name;
-            // Add more cells for content, daily dose, etc.
-          }
+          const row = table.insertRow();
+    
+          // Insert the supplement name only for the first compound
+          let cell = row.insertCell();
+          cell.textContent = index === 0 ? supplement.name : '';
+          
+          // Insert the compound name
+          cell = row.insertCell();
+          cell.textContent = compound.name;
+          
+          // Insert the content
+          cell = row.insertCell();
+          cell.textContent = compound.content;
+    
+          // Insert the daily dose
+          cell = row.insertCell();
+          cell.textContent = compound.dailyDose;
+    
+          // Insert the dosage form and disintegration time only for the first compound
+          cell = row.insertCell();
+          cell.textContent = index === 0 ? supplement.dosageForm : '';
+    
+          cell = row.insertCell();
+          cell.textContent = index === 0 ? supplement.disintegrationTime : '';
         });
-    });
-}
+      });
+    }
+    
 });

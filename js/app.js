@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let element of document.querySelectorAll('.enzyme-image')) {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = enzymeTargetPosition - currentPosition;
+              console.log(`Enzyme image: initial position = ${currentPosition}, distance = ${distance}`);
               element.classList.add('slide'); // Add the slide class
               element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');
@@ -178,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let element of document.querySelectorAll('.herb-image')) {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = herbTargetPosition - currentPosition;
+              console.log(`Herb image: initial position = ${currentPosition}, distance = ${distance}`);
               element.classList.add('slide'); // Add the slide class
               element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');

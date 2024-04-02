@@ -142,7 +142,7 @@ body, html {
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Centers the container horizontally */
   overflow: auto;
-  max-height: 100vh;
+  height: 800vh;
   margin-bottom: 300px;
 }
 .toolbar {

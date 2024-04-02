@@ -15,14 +15,15 @@ body, html {
   overflow-y: auto;
 }
 #header {
-  background-color: #2e3ea6;
-  color: #ffffff;
+  background-color: #e9e9e9;
+  color: #333;
   text-align: center;
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 100%;
 }
+
 .selector {
   display: flex;
   justify-content: center;
@@ -119,7 +120,7 @@ body, html {
    /* Add some space below the heading */
 }
 #conclusionsContainer p, #methodsContainer p, #objectivesContainer p {
-  margin-bottom: 10px; /* Add some space below the paragraph */
+  margin-bottom: 5 px; /* Add some space below the paragraph */
 }
 #resultsContainer p {
   font-weight: bold;

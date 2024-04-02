@@ -10,8 +10,9 @@ body {
   overflow: auto;
 }
 body, html {
-  transform: scale(0.8);
-  height: 200%;
+  margin: 0;
+  transform: scale(0.9);
+  height: 100%;
   overflow: auto;
 
 }
@@ -108,7 +109,7 @@ body, html {
   background-color: #f9f9f9; /* Change the background color */
 } 
 #appendixContainer {
-  padding: 40px; /* Add padding */
+  padding: 80px; /* Add padding */
 }
 #methodsContainer {
   background-color: #e9e9e9;

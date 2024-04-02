@@ -140,12 +140,23 @@ document.addEventListener('DOMContentLoaded', function() {
   function moveSelectedEnzymeAndHerb(enzymeName, herbName) {
     // Get the target positions for the enzyme and herb containers
     let enzymeTarget = Array.from(document.querySelectorAll('#enzymeGrid .itemContainer')).find(el => el.textContent.trim() === 'CYP2E1');
-    let herbTarget = Array.from(document.querySelectorAll('#herbGrid .itemContainer')).find(el => el.textContent.trim() === 'Kava Kava');
+    let herbTarget = Array.from(document.querySelectorAll('#herbGrid .itemContainer')).find(el => el.textContent.trim() === 'Kava kava');
+    let selectedEnzyme;
+    let selectedHerb;
 
-    // Get the selected enzyme and herb elements
-    let selectedEnzyme = Array.from(document.querySelectorAll('#enzymeGrid .itemContainer')).find(el => el.textContent.trim() === enzymeName);
-    let selectedHerb = Array.from(document.querySelectorAll('#herbGrid .itemContainer')).find(el => el.textContent.trim() === herbName);
+    // Add click event listeners to the enzyme grid items
+    document.querySelectorAll('#enzymeGrid .item').forEach(item => {
+      item.addEventListener('click', () => {
+        selectedEnzyme = item.textContent; // Set the selected enzyme to the clicked item's text
+      });
+    });
 
+    // Add click event listeners to the herb grid items
+    document.querySelectorAll('#herbGrid .item').forEach(item => {
+      item.addEventListener('click', () => {
+        selectedHerb = item.textContent; // Set the selected herb to the clicked item's text
+      });
+    });
     // If the selected enzyme or herb doesn't exist, exit the function
     if (!selectedEnzyme || !selectedHerb) {
       console.log('Selected enzyme or herb does not exist');

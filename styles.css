@@ -141,7 +141,7 @@ body, html {
   margin: 0 auto; /* Centers the container horizontally */
   overflow: auto;
   height: auto; /* Add this line */
-  min-height: 400vh; /* Add this line */
+  min-height: 4000vh; /* Add this line */
 
 }
 .toolbar {

@@ -3,15 +3,16 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 10;
+  margin: 20;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
-  height: 100%;
-  overflow-y: auto;
+  height: 200%;
+  overflow: auto;
 }
 body, html {
-  height: 100%;
+  height: 200%;
   overflow: auto;
+
 }
 #header {
   background-color: #e9e9e9;

@@ -199,7 +199,9 @@ document.addEventListener('DOMContentLoaded', function() {
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
             // Define the target positions for the enzyme and herb containers
         moveSelectedEnzymeAndHerb(window.selected.enzyme, window.selected.herb);
-
+        // Update the chart
+        updateChart(interaction);
+        
             }
       }
     // Update the state

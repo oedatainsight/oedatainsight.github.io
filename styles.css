@@ -9,6 +9,10 @@ body {
   height: 100%;
   overflow: auto;
 }
+body, html {
+  height: 100%;
+  overflow: auto;
+}
 #header {
   background-color: #2e3ea6;
   color: #ffffff;

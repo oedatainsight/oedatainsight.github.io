@@ -141,9 +141,8 @@ body, html {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); /* Adjust as needed */
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Centers the container horizontally */
-  overflow-y: auto;
-  height: auto; /* Add this line */; /* Add this line */
-  max-height: 1000vh;
+  overflow: auto;
+  max-height: 100vh;
 }
 .toolbar {
   display: flex;

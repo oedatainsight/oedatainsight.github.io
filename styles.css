@@ -99,11 +99,11 @@ body {
 } 
 #methodsContainer {
   background-color: #e9e9e9;
-  max-width: 40%; /* Change the background color */
+  max-width: 50%; /* Change the background color */
 }
 #objectivesContainer {
   background-color: #e9e9e9; 
-  max-width: 40%;/* Change the background color */
+  max-width: 50%;/* Change the background color */
 }
 #conclusionsContainer h2, #methodsContainer h2, #objectivesContainer h2, #resultsContainer h2{
   margin-bottom: 10px; /* Add some space below the heading */
@@ -159,6 +159,7 @@ resultsContainer {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  max-width: 50%;
 }
 .dropdown {
   position: relative;

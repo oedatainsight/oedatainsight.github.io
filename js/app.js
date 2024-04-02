@@ -165,20 +165,22 @@ document.addEventListener('DOMContentLoaded', function() {
         let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
 
             // Slide all enzyme images to the position of the CYP2E1 image
-        for (let element of document.querySelectorAll('.enzyme-image')) {
-          let currentPosition = element.getBoundingClientRect().right;
-          let distance = enzymeTargetPosition - currentPosition;
-          element.style.transform = `translateX(${distance}px)`;
-          element.classList.add('selected');
-        }
+            for (let element of document.querySelectorAll('.enzyme-image')) {
+              let currentPosition = element.getBoundingClientRect().right;
+              let distance = enzymeTargetPosition - currentPosition;
+              element.style.transform = `translateX(${distance}px)`;
+              element.style.transition = 'transform 1s'; // Add this line
+              element.classList.add('selected');
+            }
 
-        // Slide all herb images to the position of the Kava Kava image
-        for (let element of document.querySelectorAll('.herb-image')) {
-          let currentPosition = element.getBoundingClientRect().right;
-          let distance = herbTargetPosition - currentPosition;
-          element.style.transform = `translateX(${distance}px)`;
-          element.classList.add('selected');
-        }
+            // Slide all herb images to the position of the Kava Kava image
+            for (let element of document.querySelectorAll('.herb-image')) {
+              let currentPosition = element.getBoundingClientRect().right;
+              let distance = herbTargetPosition - currentPosition;
+              element.style.transform = `translateX(${distance}px)`;
+              element.style.transition = 'transform 1s'; // Add this line
+              element.classList.add('selected');
+            }
 
             // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {

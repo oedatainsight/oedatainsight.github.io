@@ -7,12 +7,12 @@ body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
 }
 body, html {
   height: 100%;
   justify-content: flex-start;
-  overflow: auto;
+  overflow-y: auto;
 }
 #header {
   background-color: #2e3ea6;

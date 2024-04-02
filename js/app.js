@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <p>Interactive Graph: Explore what this study found on the effects of herbal supplemmentation on metabolized ratios of substrate drugs. Select an enzyme and a herbal supplement</p>
     `;
 
+
     conclusionsContainer.innerHTML = `
       <h2>Conclusions</h2>
       <p>${studyDetailsData.conclusions}</p>
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
           backgroundColor: ['rgba(128, 128, 128, 0.2)', 'rgba(128, 128, 128, 0.2)'], // Change to gray
           borderColor: ['rgba(128, 128, 128, 1)', 'rgba(128, 128, 128, 1)'], // Change to gray
           borderWidth: 1,
+          footnote: footnote,
     
   
           // Add error bars
@@ -159,13 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // If the selected enzyme or herb doesn't exist, exit the function
     if (!selectedEnzyme || !selectedHerb) {
-      console.log('Selected enzyme or herb does not exist');
+      console.log('valid');
       return;
     }
 
     // If the target enzyme or herb doesn't exist, exit the function
     if (!enzymeTarget || !herbTarget) {
-      console.log('Target enzyme or herb does not exist');
+      console.log('valid');
       return;
     }
 
@@ -201,7 +203,20 @@ document.addEventListener('DOMContentLoaded', function() {
         moveSelectedEnzymeAndHerb(window.selected.enzyme, window.selected.herb);
         // Update the chart
         updateChart(interaction);
-        
+        // Get the chart container
+        const chartContainer = document.getElementById('chart-container');
+
+        // Remove any existing footnote
+      
+        // Create a new paragraph element for the footnote
+        const footnoteElement = document.createElement('p');
+
+        // Set the text of the footnote element
+        footnoteElement.textContent = window.studyData[window.selected.enzyme].footnote;
+
+        // Add the footnote element to the chart container
+        chartContainer.appendChild(footnoteElement);
+
             }
       }
     // Update the state
@@ -214,6 +229,8 @@ document.addEventListener('DOMContentLoaded', function() {
        // Remove the chart
       let chart = document.getElementById('interactionChart');
       chart.remove();
+      const existingFootnote = document.querySelector('#chartContainer p');
+        if (existingFootnote) existingFootnote.remove();
 
       // Clear the interaction data
       interactionDisplay.textContent = '';

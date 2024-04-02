@@ -7,7 +7,8 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <script src="https://unpkg.com/@chartjs/chartjs-chart-error-bars"></script>
+  <script src="table2.js"></script>
+
   <style>
   table {
     width: 100%;
@@ -59,6 +60,21 @@
       <canvas id="interactionChart"></canvas>
     </div>
     <div id="conclusionsContainer"></div>
+    <div id="appendixContainer">
+      <h2>Appendix</h2>
+      <h2>Content of phytochemical marker compounds, dosage form, and disintegration times for botanical supplements.</h2>
+      <p>Phytochemical marker compounds, dosage form, and disintegration times for botanical supplements used in the study are shown in the table below.</p>
+      <table id="supplementsTable">
+        <tr>
+          <th>Supplement</th>
+          <th>Compound</th>
+          <th>Content (mg/capsule)</th>
+          <th>Daily Dose (mg)</th>
+          <th>Dosage Form</th>
+          <th>Disintegration Time (min.)</th>
+       </tr>
+      </table>
+    </div>
     <div id="referencesContainer">
       <h2>References</h2>
         <ol>
@@ -127,12 +143,6 @@
           <li>Shohet D, Wills RBH, Stuart DL. Valepotriates and valerenic acid in commercial preparations of valerian available in Australia. Pharmazie. 2001;56:860–863. - PubMed</li>
         </ol>
       </div>
-    <div id="Appendix">
-      <h2>Appendix</h2>
-      <p>Content of phytochemical marker compounds, dosage form, and disintegration times for botanical supplements.</p>
-      <h2>Content of phytochemical marker compounds, dosage form, and disintegration times for botanical supplements.</h2>
-
-    </div>
     <div id="footnoteDisplay"></div>
     <footer>
       <p>Clinical Pharmacology & Therapeutics, 2005</p>

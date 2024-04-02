@@ -158,23 +158,29 @@ document.addEventListener('DOMContentLoaded', function() {
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
 
-        // Calculate the target position (e.g., the right edge of the screen)
-        let targetPosition = window.innerWidth;
+            // Calculate the target positions based on the positions of the CYP2E1 and Kava Kava images
+        let cyp2e1Image = document.querySelector('.enzyme-image[alt="CYP2E1"]');
+        let kavaKavaImage = document.querySelector('.herb-image[alt="Kava Kava"]');
+        let enzymeTargetPosition = cyp2e1Image.getBoundingClientRect().right;
+        let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
 
-        // Slide the selected items to the target position
-        for (let element of document.querySelectorAll(`.enzyme-image[alt="${window.selected.enzyme}"], .herb-image[alt="${window.selected.herb}"], .enzyme-name:contains("${window.selected.enzyme}"), .herb-name:contains("${window.selected.herb}")`)) {
+            // Slide all enzyme images to the position of the CYP2E1 image
+        for (let element of document.querySelectorAll('.enzyme-image')) {
           let currentPosition = element.getBoundingClientRect().right;
-          let distance = targetPosition - currentPosition;
+          let distance = enzymeTargetPosition - currentPosition;
           element.style.transform = `translateX(${distance}px)`;
           element.classList.add('selected');
         }
-         // Move the chart to the target position
-          let chart = document.getElementById('interactionChart');
-          chart.style.position = 'absolute';
-          chart.style.left = `${targetPosition}px`;
-          chart.style.top = '0px'; // Adjust as needed
 
-        // Remove non-selected items
+        // Slide all herb images to the position of the Kava Kava image
+        for (let element of document.querySelectorAll('.herb-image')) {
+          let currentPosition = element.getBoundingClientRect().right;
+          let distance = herbTargetPosition - currentPosition;
+          element.style.transform = `translateX(${distance}px)`;
+          element.classList.add('selected');
+        }
+
+            // Remove non-selected items
         for (let image of document.querySelectorAll('.enzyme-image:not(.selected), .herb-image:not(.selected)')) {
           image.remove();
         }

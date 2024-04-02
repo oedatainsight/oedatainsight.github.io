@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 10;
   background-color: #f0f0f0;
@@ -135,13 +135,13 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); /* Adjust as needed */
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Centers the container horizontally */
   overflow: auto;
   height: auto; /* Add this line */
-  min-height: 4000vh; /* Add this line */
+  min-height: 1000vh; /* Add this line */
 
 }
 .toolbar {

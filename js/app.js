@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Calculate the target positions based on the positions of the CYP2E1 and Kava Kava images
         let cyp2e1Image = document.querySelector('.enzyme-image[alt="CYP2E1"]');
-        let kavaKavaImage = document.querySelector('.herb-image[alt="Kava Kava"]');
+        let kavaKavaImage = document.querySelector('.herb-image[alt="Kava kava"]');
         let enzymeTargetPosition = cyp2e1Image.getBoundingClientRect().right;
         let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
 

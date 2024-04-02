@@ -165,11 +165,14 @@ document.addEventListener('DOMContentLoaded', function() {
         let herbTargetPosition = kavaKavaImage.getBoundingClientRect().right;
 
             // Slide all enzyme images to the position of the CYP2E1 image
+            // Slide all enzyme images to the position of the CYP2E1 image
             for (let element of document.querySelectorAll('.enzyme-image')) {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = enzymeTargetPosition - currentPosition;
-              element.style.transform = `translateX(${distance}px)`;
-              element.style.transition = 'transform 1s'; // Add this line
+              element.classList.add('slide'); // Add the slide class
+              setTimeout(() => {
+                element.style.transform = `translateX(${distance}px)`;
+              }, 0);
               element.classList.add('selected');
             }
 
@@ -177,8 +180,10 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let element of document.querySelectorAll('.herb-image')) {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = herbTargetPosition - currentPosition;
-              element.style.transform = `translateX(${distance}px)`;
-              element.style.transition = 'transform 1s'; // Add this line
+              element.classList.add('slide'); // Add the slide class
+              setTimeout(() => {
+                element.style.transform = `translateX(${distance}px)`;
+              }, 0);
               element.classList.add('selected');
             }
 

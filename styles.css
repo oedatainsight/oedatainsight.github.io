@@ -52,7 +52,9 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(100px); } /* Adjust as needed */
 }
-
+.slide {
+  transition: transform 1s ease-in-out;
+}
 .slide-right {
   animation: slide-right 1s forwards; /* Adjust duration as needed */
 }

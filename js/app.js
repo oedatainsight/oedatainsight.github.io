@@ -170,9 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = enzymeTargetPosition - currentPosition;
               element.classList.add('slide'); // Add the slide class
-              setTimeout(() => {
-                element.style.transform = `translateX(${distance}px)`;
-              }, 0);
+              element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');
             }
 
@@ -181,9 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
               let currentPosition = element.getBoundingClientRect().right;
               let distance = herbTargetPosition - currentPosition;
               element.classList.add('slide'); // Add the slide class
-              setTimeout(() => {
-                element.style.transform = `translateX(${distance}px)`;
-              }, 0);
+              element.style.transform = `translateX(${distance}px)`;
               element.classList.add('selected');
             }
 

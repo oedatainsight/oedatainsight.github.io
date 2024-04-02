@@ -35,16 +35,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
           cell.textContent = compound.dailyDose;
     
           cell = row.insertCell();
-          if (!dosageFormAdded && compound.dosageForm) {
-            cell.textContent = compound.dosageForm;
-            dosageFormAdded = true; // Set the flag as added
+          if (index === 0) {
+            cell.textContent = compound.dosageForm ? compound.dosageForm : '';
+            dosageFormAdded = true;
           }
     
-          // Insert the disintegration time if it hasn't been added yet and if it exists
           cell = row.insertCell();
-          if (!disintegrationTimeAdded && compound.disintegrationTime) {
-            cell.textContent = compound.disintegrationTime;
-            disintegrationTimeAdded = true; // Set the flag as added
+          if (index === 0) {
+            cell.textContent = compound.disintegrationTime ? compound.disintegrationTime : '';
+            disintegrationTimeAdded = true;
           }
         });
       });

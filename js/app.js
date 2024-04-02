@@ -205,12 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChart(interaction);
         footnote
         // Get the chart container
-        const chartContainer = document.getElementById('interactionChart');
+        const chartContainer = document.getElementById('chartContainer');
 
         // Check if chartContainer exists
         if (chartContainer) {
           // Remove any existing footnote
-          const existingFootnote = document.querySelector('#chart-container p');
+          const existingFootnote = document.querySelector('#chartContainer p');
           if (existingFootnote) existingFootnote.remove();
 
           // Create a new paragraph element for the footnote

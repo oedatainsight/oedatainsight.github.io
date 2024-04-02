@@ -30,7 +30,7 @@
           "CI": "0.55 to 0.71"
         }
       },
-      "Black cohosh": {
+      "Black Cohosh": {
         "description": "Statistically significant inhibition (approx. 7%), likely not clinically relevant",
         "preSupplementation": {
           "mean": 0.64,
@@ -78,7 +78,7 @@
           "CI": "3.33 to 4.64"
         }
       },
-      "Black cohosh": {
+      "Black Cohosh": {
         "description": "No significant change",
         "preSupplementation": {
           "mean": 3.89,
@@ -126,7 +126,7 @@
             "CI": "0.21 to 0.36"
           }
         },
-        "Black cohosh": {
+        "Black Cohosh": {
           "description": "No significant change",
           "preSupplementation": {
             "mean": 0.45,

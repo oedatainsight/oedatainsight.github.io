@@ -10,7 +10,7 @@ body {
   overflow: auto;
 }
 body, html {
-  height: 100%;
+  height: 100vh;
   overflow: auto;
 }
 #header {

@@ -10,6 +10,7 @@ body {
   overflow: auto;
 }
 body, html {
+  transform: scale(0.8);
   height: 200%;
   overflow: auto;
 
@@ -137,9 +138,7 @@ body, html {
   max-width: 50%; /* Change the maximum width */
   background-color: #e9e9e9; /* Change the background color */
 }
-#centeredContainer {
-
-  transform: scale(0.8); /* Scale the element down to 90% of its original size */
+#centeredContainer { /* Scale the element down to 90% of its original size */
   display: flex;
   flex-direction: column;
   align-items: center;

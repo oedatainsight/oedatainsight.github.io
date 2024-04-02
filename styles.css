@@ -10,7 +10,8 @@ body {
   overflow: auto;
 }
 body, html {
-  height: 100vh;
+  height: 100%;
+  justify-content: flex-start;
   overflow: auto;
 }
 #header {

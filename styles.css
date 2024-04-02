@@ -11,6 +11,8 @@ body {
   background-color: #2e3ea6;
   color: #ffffff;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   width: 100%;
 }

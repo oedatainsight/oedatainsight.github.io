@@ -6,7 +6,7 @@
     "conclusions": "Goldenseal strongly inhibited CYP2D6 and CYP3A4/5 activity, kava inhibited CYP2E1, black cohosh weakly inhibited CYP2D6, and valerian showed no significant changes on drug metabolism enzymes. The clinical relevance of these findings is unclear."
   },
   "CYP2D6": {
-      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (8-hour debrisoquine urinary recovery ratios) for CYP2D6. Group mean ratios are presented with 95% confidence intervals.",
+      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (8-hour debrisoquine urinary recovery ratios) for CYP2D6. Group mean ratios are presented.",
       "metabolizingagent":"8-hour debrisoquine urinary recovery ratios",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
@@ -54,7 +54,7 @@
       }
     },
     "CYP3A4": {
-      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (1-hydroxymidazolam/ midazolam) for CYP3A4/5. Group mean ratios are presented with 95% confidence intervals.",
+      "footnote": "Comparison of pre- and post-supplementation phenotypic ratios (1-hydroxymidazolam/ midazolam) for CYP3A4/5. Group mean ratios are presented.",
       "metabolizingagent":"1-hydroxymidazolam/ midazolam ratios",
       "Goldenseal": {
         "description": "Significant inhibition (approx. 40%)",
@@ -102,7 +102,7 @@
       }
     },
       "CYP2E1": {
-        "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (6-hydroxychlorzoxazone/ chlorzoxazone) for CYP2E1. Group mean ratios are presented with 95% confidence intervals.",
+        "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (6-hydroxychlorzoxazone/ chlorzoxazone) for CYP2E1. Group mean ratios are presented.",
         "metabolizingagent":"6-hydroxychlorzoxazone/ chlorzoxazone ratios",
         "Goldenseal": {
           "description": "No significant change",
@@ -151,7 +151,7 @@
       },
 
     "CYP1A2": {
-      "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (Paraxanthine/caffeine) for CYP1A2. Group mean ratios are presented with 95% confidence intervals.",
+      "footnote":"Comparison of pre- and post-supplementation phenotypic ratios (Paraxanthine/caffeine) for CYP1A2. Group mean ratios are presented.",
       "metabolizingagent":"Paraxanthine/caffeine ratios", 
       "Goldenseal": {
         "description": "No significant change",

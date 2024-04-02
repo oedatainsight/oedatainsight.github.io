@@ -137,6 +137,35 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  function moveSelectedEnzymeAndHerb(enzymeName, herbName) {
+    // Get the target positions for the enzyme and herb containers
+    let enzymeTarget = Array.from(document.querySelectorAll('#enzymeGrid .itemContainer')).find(el => el.textContent.trim() === 'CYP2E1');
+    let herbTarget = Array.from(document.querySelectorAll('#herbGrid .itemContainer')).find(el => el.textContent.trim() === 'Kava Kava');
+
+    // Get the selected enzyme and herb elements
+    let selectedEnzyme = Array.from(document.querySelectorAll('#enzymeGrid .itemContainer')).find(el => el.textContent.trim() === enzymeName);
+    let selectedHerb = Array.from(document.querySelectorAll('#herbGrid .itemContainer')).find(el => el.textContent.trim() === herbName);
+
+    // If the selected enzyme or herb doesn't exist, exit the function
+    if (!selectedEnzyme || !selectedHerb) {
+      console.log('Selected enzyme or herb does not exist');
+      return;
+    }
+
+    // If the target enzyme or herb doesn't exist, exit the function
+    if (!enzymeTarget || !herbTarget) {
+      console.log('Target enzyme or herb does not exist');
+      return;
+    }
+
+    // Calculate the distances to the target positions
+    let enzymeDistance = enzymeTarget.getBoundingClientRect().left - selectedEnzyme.getBoundingClientRect().left;
+    let herbDistance = herbTarget.getBoundingClientRect().left - selectedHerb.getBoundingClientRect().left;
+
+    // Apply a CSS transform to move the selected elements to the target positions
+    selectedEnzyme.style.transform = `translateX(${enzymeDistance}px)`;
+    selectedHerb.style.transform = `translateX(${herbDistance}px)`;
+  }
 
   function selectItem(type, item) {
     // Check if the user is selecting the correct type
@@ -158,32 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
         interactionDisplay.textContent = `Interaction between ${window.selected.enzyme} and ${window.selected.herb}: ${interactionDescription || 'Data not available'}`;
         interactionDisplay.classList.add('fade-in'); // Add the fade-in class
             // Define the target positions for the enzyme and herb containers
-            let enzymeTargetPosition = document.querySelector('#CYP2E1').getBoundingClientRect().right;
-            let herbTargetPosition = document.querySelector('#Kava').getBoundingClientRect().right;
+        moveSelectedEnzymeAndHerb(window.selected.enzyme, window.selected.herb);
 
-            // Slide all selected enzyme containers to the position of the CYP2E1 container
-            for (let container of document.querySelectorAll('.enzyme-container')) {
-              if (container.classList.contains('selected')) {
-                let currentPosition = container.getBoundingClientRect().right;
-                let distance = enzymeTargetPosition - currentPosition;
-                container.style.transform = `translateX(${distance}px)`;
-              } else {
-                container.remove();
-              }
-            }
-
-            // Slide all selected herb containers to the position of the Kava Kava container
-            for (let container of document.querySelectorAll('.herb-container')) {
-              if (container.classList.contains('selected')) {
-                let currentPosition = container.getBoundingClientRect().right;
-                let distance = herbTargetPosition - currentPosition;
-                container.style.transform = `translateX(${distance}px)`;
-              } else {
-                container.remove();
-              }
             }
       }
-    }// Update the state
+    // Update the state
 
     document.getElementById('goBack').style.display = 'block';
     document.getElementById('goBack').addEventListener('click', function() {

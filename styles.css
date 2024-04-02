@@ -140,6 +140,9 @@ body, html {
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Centers the container horizontally */
   overflow: auto;
+  height: auto; /* Add this line */
+  min-height: 100vh; /* Add this line */
+
 }
 .toolbar {
   display: flex;
